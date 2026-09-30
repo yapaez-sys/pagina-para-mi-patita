@@ -1,0 +1,1333 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="theme-color"
+        content="#10071c"
+    >
+
+    <meta
+        name="description"
+        content="Una pequeña historia hecha para alguien muy especial."
+    >
+
+    <title>Para mi patita 💜</title>
+
+    <link
+        rel="stylesheet"
+        href="css/style.css"
+    >
+
+</head>
+
+
+<body>
+
+
+    <!-- =====================================================
+         PANTALLA DE BLOQUEO
+         ===================================================== -->
+
+    <section
+        class="pantalla-entrada"
+        id="pantallaEntrada"
+    >
+
+        <div class="estrellas-fondo"></div>
+
+
+        <!-- brillo central -->
+
+        <div class="entrada-luz"></div>
+
+
+        <!-- corazón -->
+
+        <div class="entrada-corazon">
+            ♡
+        </div>
+
+
+        <!-- pequeño texto -->
+
+        <p class="entrada-mini">
+            UNA PEQUEÑA HISTORIA PARA TI
+        </p>
+
+
+        <!-- título -->
+
+        <h1>
+            Para mi patita
+        </h1>
+
+
+        <!-- mensaje -->
+
+        <p class="entrada-texto">
+
+            Hay una fecha que solamente
+            <br>
+
+            tú y yo conocemos.
+
+        </p>
+
+
+        <p class="entrada-subtexto">
+
+            Si realmente recuerdas
+            <br>
+
+            el comienzo de nuestra historia...
+
+        </p>
+
+
+        <!-- =================================================
+             CAMPO DE CLAVE
+             ================================================= -->
+
+        <div
+            class="entrada-fecha"
+            id="contenedorFecha"
+        >
+
+            <div class="candado">
+                ♡
+            </div>
+
+            <input
+                type="password"
+                id="fechaInput"
+                maxlength="8"
+                inputmode="numeric"
+                pattern="[0-9]*"
+                autocomplete="off"
+                aria-label="Nuestra fecha secreta"
+                placeholder="••••••••"
+            >
+
+        </div>
+
+
+        <!-- botón -->
+
+        <button
+            class="btn-entrada"
+            id="btnEntrada"
+            type="button"
+        >
+
+            Abrir nuestra historia
+
+            <span>
+                ♡
+            </span>
+
+        </button>
+
+
+        <!-- =================================================
+             MENSAJE DE ERROR
+             ================================================= -->
+
+        <div
+            class="error-fecha"
+            id="errorFecha"
+            aria-live="polite"
+        >
+
+            <span class="error-icon">
+                ✦
+            </span>
+
+            <p id="mensajeError">
+
+                Mmm... esa no es la llave
+                de nuestra historia. 💭
+
+            </p>
+
+        </div>
+
+
+        <!-- pista -->
+
+        <p class="entrada-pista">
+
+            Hay recuerdos que nunca deberían olvidarse.
+
+        </p>
+
+
+        <!-- corazones decorativos -->
+
+        <div class="entrada-decoracion decoracion-uno">
+            ♡
+        </div>
+
+        <div class="entrada-decoracion decoracion-dos">
+            ✦
+        </div>
+
+        <div class="entrada-decoracion decoracion-tres">
+            ♡
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         EXPERIENCIA PRINCIPAL
+         ===================================================== -->
+
+    <main
+        class="inicio"
+        id="inicio"
+    >
+
+        <div class="estrellas-fondo"></div>
+
+
+        <!-- luna -->
+
+        <div class="luna">
+            ☾
+        </div>
+
+
+        <!-- =================================================
+             TÍTULO PRINCIPAL
+             ================================================= -->
+
+        <section class="hero-inicio">
+
+            <div class="titulo-inicio">
+
+                <span>
+                    PARA ALGUIEN MUY ESPECIAL
+                </span>
+
+
+                <h2>
+
+                    Tengo algo
+                    <br>
+
+                    <em>
+                        para ti...
+                    </em>
+
+                </h2>
+
+
+                <div class="decoracion-titulo">
+
+                    <i></i>
+
+                    ♡
+
+                    <i></i>
+
+                </div>
+
+
+                <p>
+
+                    Hay algo que quiero
+                    <br>
+
+                    que descubras por ti misma.
+
+                </p>
+
+            </div>
+
+
+            <!-- =================================================
+                 CORAZÓN
+                 ================================================= -->
+
+            <div
+                class="zona-corazon"
+                id="zonaCorazon"
+            >
+
+                <canvas
+                    id="canvasCorazon"
+                ></canvas>
+
+
+                <!-- anillos -->
+
+                <div
+                    class="anillo-corazon anillo-uno"
+                ></div>
+
+                <div
+                    class="anillo-corazon anillo-dos"
+                ></div>
+
+                <div
+                    class="anillo-corazon anillo-tres"
+                ></div>
+
+
+                <!-- botón -->
+
+                <button
+                    class="boton-corazon"
+                    id="botonCorazon"
+                    type="button"
+                    aria-label="Descubrir sorpresa"
+                >
+
+                    <span class="nucleo-corazon">
+                        ♡
+                    </span>
+
+                </button>
+
+            </div>
+
+
+            <!-- =================================================
+                 INDICADOR
+                 ================================================= -->
+
+            <div
+                class="indicador"
+                id="indicador"
+            >
+
+                <span>
+                    toca el corazón
+                </span>
+
+                <b>
+                    ↓
+                </b>
+
+            </div>
+
+
+            <!-- =================================================
+                 PATITOS
+                 ================================================= -->
+
+            <div class="patitos">
+
+                <div class="patito patito-uno">
+                    🦆
+                </div>
+
+                <span>
+                    para mi patita
+                    <b>♡</b>
+                </span>
+
+                <div class="patito patito-dos">
+                    🦆
+                </div>
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- =====================================================
+             SORPRESA DESPUÉS DEL CORAZÓN
+             ===================================================== -->
+
+        <section
+            class="sorpresa"
+            id="sorpresa"
+        >
+
+            <div class="sorpresa-brillo"></div>
+
+
+            <div class="sorpresa-contenido">
+
+                <div class="sorpresa-corazon">
+                    ♡
+                </div>
+
+
+                <p class="sorpresa-mini">
+                    LO ENCONTRASTE
+                </p>
+
+
+                <p class="sorpresa-texto">
+
+                    Y ahora que encontraste
+                    <br>
+
+                    el corazón...
+
+                </p>
+
+
+                <h2>
+
+                    quiero llevarte
+                    <br>
+
+                    al comienzo
+                    <br>
+
+                    de nuestra historia.
+
+                </h2>
+
+
+                <p class="sorpresa-secundaria">
+
+                    Porque antes de todo lo que somos hoy,
+                    <br>
+
+                    hubo un primer recuerdo.
+
+                </p>
+
+
+                <button
+                    class="btn-historia"
+                    id="btnHistoria"
+                    type="button"
+                >
+
+                    <span>
+                        Descubrir nuestro recuerdo
+                    </span>
+
+                    <b>
+                        →
+                    </b>
+
+                </button>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+
+    <!-- =====================================================
+         SECCIÓN 1
+         30 DE ABRIL
+         PRIMER VIAJE
+         ===================================================== -->
+
+    <section
+        class="primer-viaje"
+        id="primerViaje"
+    >
+
+        <div class="viaje-fondo"></div>
+
+
+        <div class="viaje-estrellas"></div>
+
+
+        <div class="viaje-contenido">
+
+
+            <!-- etiqueta -->
+
+            <div class="etiqueta">
+
+                NUESTRO PRIMER RECUERDO
+
+            </div>
+
+
+            <!-- fecha -->
+
+            <div class="fecha-viaje">
+
+                <strong>
+                    30
+                </strong>
+
+                <span>
+                    ABRIL
+                </span>
+
+            </div>
+
+
+            <!-- separador -->
+
+            <div class="separador-viaje">
+
+                <i></i>
+
+                ♡
+
+                <i></i>
+
+            </div>
+
+
+            <!-- título -->
+
+            <h2>
+
+                El comienzo
+                <br>
+
+                de nuestra historia
+
+            </h2>
+
+
+            <!-- texto -->
+
+            <p class="viaje-introduccion">
+
+                Quizás en ese momento no sabíamos
+                todo lo que vendría después...
+
+            </p>
+
+
+            <p class="viaje-introduccion">
+
+                Pero ese viaje terminó convirtiéndose
+                en uno de esos recuerdos que quiero
+                guardar para siempre.
+
+            </p>
+
+
+            <!-- =================================================
+                 FOTO DEL 30 DE ABRIL
+                 ================================================= -->
+
+            <div class="foto-recuerdo">
+
+                <div class="foto-marco">
+
+                    <div class="foto-esquina esquina-uno"></div>
+                    <div class="foto-esquina esquina-dos"></div>
+
+                    <img
+                        src="img/30_abril.jpg"
+                        alt="Nuestro primer viaje"
+                    >
+
+                    <div class="foto-brillo"></div>
+
+                </div>
+
+
+                <p>
+
+                    Un recuerdo que siempre
+                    voy a llevar conmigo. ♡
+
+                </p>
+
+            </div>
+
+
+            <!-- =================================================
+                 VIDEO
+                 ================================================= -->
+
+            <div class="video-seccion">
+
+                <p class="video-mini">
+
+                    GUARDEMOS ESTE MOMENTO
+
+                </p>
+
+
+                <h3>
+
+                    Nuestro primer viaje 🎥
+
+                </h3>
+
+
+                <p class="video-descripcion">
+
+                    Porque algunas historias
+                    merecen volver a vivirse.
+
+                </p>
+
+
+                <div class="video-marco">
+
+                    <div class="video-luz"></div>
+
+                    <video
+                        id="videoRecuerdo"
+                        controls
+                        playsinline
+                        preload="metadata"
+                    >
+
+                        <source
+                            src="img/primer_recuerdo.mp4"
+                            type="video/mp4"
+                        >
+
+                        Tu navegador no puede
+                        reproducir este video.
+
+                    </video>
+
+                </div>
+
+            </div>
+
+
+            <!-- =================================================
+                 FRASE
+                 ================================================= -->
+
+            <div class="frase-viaje">
+
+                <span>
+                    ✦
+                </span>
+
+
+                <p>
+
+                    Y sin saberlo,
+                    <br>
+
+                    estábamos empezando
+                    <br>
+
+                    algo muy bonito.
+
+                </p>
+
+
+                <span>
+                    ✦
+                </span>
+
+            </div>
+
+
+            <!-- botón -->
+
+            <button
+                class="btn-siguiente"
+                id="btnSiguiente"
+                type="button"
+            >
+
+                <span>
+                    Y después...
+                </span>
+
+                <b>
+                    ↓
+                </b>
+
+            </button>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         SECCIÓN 2
+         30 DE MAYO
+         ===================================================== -->
+
+    <section
+        class="seccion-30-mayo"
+        id="seccion30Mayo"
+    >
+
+        <div class="mayo-fondo"></div>
+
+
+        <div class="mayo-contenido">
+
+            <p class="mayo-mini">
+                Y ENTONCES LLEGÓ ESE DÍA
+            </p>
+
+
+            <div class="mayo-fecha">
+
+                <strong>
+                    30
+                </strong>
+
+                <span>
+                    MAYO
+                </span>
+
+            </div>
+
+
+            <div class="mayo-corazon">
+                ♡
+            </div>
+
+
+            <h2>
+
+                El día en que
+                <br>
+
+                nuestra historia
+                <br>
+
+                cambió.
+
+            </h2>
+
+
+            <p class="mayo-texto">
+
+                Hay fechas que simplemente aparecen
+                en el calendario.
+
+                <br><br>
+
+                Y hay otras que se quedan
+                para siempre en el corazón.
+
+            </p>
+
+
+            <!-- FOTO 30 MAYO -->
+
+            <div class="mayo-foto">
+
+                <img
+                    src="img/30_mayo.jpg"
+                    alt="Nuestro 30 de mayo"
+                >
+
+            </div>
+
+
+            <p class="mayo-final">
+
+                Ese día comenzó oficialmente
+                algo que hoy significa muchísimo para mí.
+
+            </p>
+
+
+            <button
+                class="btn-memorias"
+                id="btnMemorias"
+                type="button"
+            >
+
+                Continuar nuestra historia
+                <span>↓</span>
+
+            </button>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         SECCIÓN 3
+         NUESTROS RECUERDOS
+         ===================================================== -->
+
+    <section
+        class="seccion-recuerdos"
+        id="seccionRecuerdos"
+    >
+
+        <div class="recuerdos-fondo"></div>
+
+
+        <div class="recuerdos-contenido">
+
+            <p class="recuerdos-mini">
+                PEQUEÑOS MOMENTOS
+            </p>
+
+
+            <h2>
+
+                Nosotros
+
+                <br>
+
+                <em>
+                    en recuerdos.
+                </em>
+
+            </h2>
+
+
+            <div class="recuerdos-decoracion">
+                ♡
+            </div>
+
+
+            <!-- imagen -->
+
+            <div class="recuerdo-principal">
+
+                <img
+                    src="img/nosotros_01.jpg"
+                    alt="Un recuerdo de nosotros"
+                >
+
+            </div>
+
+
+            <p class="recuerdos-texto">
+
+                Quizás para alguien más sean
+                solamente fotografías.
+
+                <br><br>
+
+                Para mí son pequeños pedacitos
+                de una historia que no quiero olvidar.
+
+            </p>
+
+
+            <!-- tarjetas -->
+
+            <div class="recuerdos-tarjetas">
+
+                <article class="tarjeta-recuerdo">
+
+                    <span>
+                        ♡
+                    </span>
+
+                    <h3>
+                        Cada momento
+                    </h3>
+
+                    <p>
+                        Tiene algo que lo hace especial.
+                    </p>
+
+                </article>
+
+
+                <article class="tarjeta-recuerdo">
+
+                    <span>
+                        ✦
+                    </span>
+
+                    <h3>
+                        Cada recuerdo
+                    </h3>
+
+                    <p>
+                        Tiene una parte de nosotros.
+                    </p>
+
+                </article>
+
+
+                <article class="tarjeta-recuerdo">
+
+                    <span>
+                        ∞
+                    </span>
+
+                    <h3>
+                        Y cada día
+                    </h3>
+
+                    <p>
+                        Hace que nuestra historia continúe.
+                    </p>
+
+                </article>
+
+            </div>
+
+
+            <button
+                class="btn-ella"
+                id="btnElla"
+                type="button"
+            >
+
+                Hay algo que quiero decirte
+                <span>→</span>
+
+            </button>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         SECCIÓN 4
+         PARA ELLA
+         ===================================================== -->
+
+    <section
+        class="seccion-ella"
+        id="seccionElla"
+    >
+
+        <div class="ella-fondo"></div>
+
+
+        <div class="ella-contenido">
+
+            <div class="ella-foto">
+
+                <img
+                    src="img/ella_01.jpg"
+                    alt="Para mi patita"
+                >
+
+            </div>
+
+
+            <p class="ella-mini">
+                PARA TI
+            </p>
+
+
+            <h2>
+
+                Si pudiera
+                <br>
+
+                explicarte lo que siento...
+
+            </h2>
+
+
+            <div class="ella-linea">
+                ♡
+            </div>
+
+
+            <div class="carta">
+
+                <p>
+
+                    Probablemente necesitaría
+                    muchas más palabras de las que
+                    caben en una página.
+
+                </p>
+
+
+                <p>
+
+                    Porque llegaste a mi vida y
+                    poco a poco fuiste convirtiendo
+                    momentos normales en recuerdos
+                    que quiero guardar.
+
+                </p>
+
+
+                <p>
+
+                    Gracias por cada risa,
+                    cada conversación,
+                    cada momento y cada recuerdo
+                    que hemos construido.
+
+                </p>
+
+
+                <p>
+
+                    Y sobre todo...
+
+                </p>
+
+
+                <p class="carta-destacada">
+
+                    gracias por ser tú.
+
+                </p>
+
+
+                <p class="carta-final">
+
+                    Te quiero muchísimo,
+                    mi patita. 💜
+
+                </p>
+
+            </div>
+
+
+            <button
+                class="btn-final"
+                id="btnFinal"
+                type="button"
+            >
+
+                Hay una última cosa...
+                <span>↓</span>
+
+            </button>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         SECCIÓN 5
+         CONTADOR
+         ===================================================== -->
+
+    <section
+        class="seccion-contador"
+        id="seccionContador"
+    >
+
+        <div class="contador-fondo"></div>
+
+
+        <div class="contador-contenido">
+
+            <p class="contador-mini">
+                DESDE AQUEL DÍA
+            </p>
+
+
+            <h2>
+
+                El tiempo pasa...
+
+                <br>
+
+                pero nosotros seguimos
+                <em>
+                    escribiendo la historia.
+                </em>
+
+            </h2>
+
+
+            <div
+                class="contador"
+                id="contador"
+            >
+
+                <div class="contador-item">
+
+                    <strong id="dias">
+                        0
+                    </strong>
+
+                    <span>
+                        días
+                    </span>
+
+                </div>
+
+
+                <div class="contador-item">
+
+                    <strong id="horas">
+                        0
+                    </strong>
+
+                    <span>
+                        horas
+                    </span>
+
+                </div>
+
+
+                <div class="contador-item">
+
+                    <strong id="minutos">
+                        0
+                    </strong>
+
+                    <span>
+                        minutos
+                    </span>
+
+                </div>
+
+
+                <div class="contador-item">
+
+                    <strong id="segundos">
+                        0
+                    </strong>
+
+                    <span>
+                        segundos
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <p class="contador-frase">
+
+                Y espero que podamos seguir
+                sumando muchos más.
+
+            </p>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         SECCIÓN 6
+         NUESTRA CANCIÓN
+         ===================================================== -->
+
+    <section
+        class="seccion-cancion"
+        id="seccionCancion"
+    >
+
+        <div class="cancion-contenido">
+
+            <div class="vinilo">
+
+                <div class="vinilo-centro">
+                    ♡
+                </div>
+
+            </div>
+
+
+            <p class="cancion-mini">
+                SI NUESTRA HISTORIA TUVIERA UNA CANCIÓN...
+            </p>
+
+
+            <h2>
+
+                Sonaría a nosotros.
+
+            </h2>
+
+
+            <p>
+
+                Este espacio queda reservado
+                para nuestra canción.
+
+            </p>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         SECCIÓN 7
+         NUESTROS SUEÑOS
+         ===================================================== -->
+
+    <section
+        class="seccion-suenos"
+        id="seccionSuenos"
+    >
+
+        <div class="suenos-contenido">
+
+            <p class="suenos-mini">
+                LO QUE TODAVÍA NOS FALTA VIVIR
+            </p>
+
+
+            <h2>
+
+                Nuestra historia
+                <br>
+
+                todavía tiene
+                <em>
+                    muchos capítulos.
+                </em>
+
+            </h2>
+
+
+            <div class="suenos-lista">
+
+                <div class="sueno">
+                    <span>✦</span>
+                    <p>Más viajes</p>
+                </div>
+
+
+                <div class="sueno">
+                    <span>♡</span>
+                    <p>Más recuerdos</p>
+                </div>
+
+
+                <div class="sueno">
+                    <span>∞</span>
+                    <p>Más momentos juntos</p>
+                </div>
+
+
+                <div class="sueno">
+                    <span>☾</span>
+                    <p>Muchos sueños por cumplir</p>
+                </div>
+
+            </div>
+
+
+            <p class="suenos-final">
+
+                Y quiero estar ahí
+                para vivirlos contigo.
+
+            </p>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         FINAL
+         ===================================================== -->
+
+    <section
+        class="seccion-final"
+        id="seccionFinal"
+    >
+
+        <div class="final-estrellas"></div>
+
+
+        <div class="final-contenido">
+
+            <div class="final-corazon">
+                ♡
+            </div>
+
+
+            <p class="final-mini">
+                Y SI LLEGASTE HASTA AQUÍ...
+            </p>
+
+
+            <h2>
+
+                Quiero que sepas
+                <br>
+
+                algo.
+
+            </h2>
+
+
+            <p class="final-mensaje">
+
+                De todas las cosas bonitas
+                que han pasado en mi vida...
+
+                <br><br>
+
+                conocerte es una de las que
+                más agradezco.
+
+            </p>
+
+
+            <div class="final-frase">
+
+                <span>
+                    ♡
+                </span>
+
+                <p>
+                    Te elegiría una y otra vez.
+                </p>
+
+                <span>
+                    ♡
+                </span>
+
+            </div>
+
+
+            <p class="final-patitos">
+                🦆 &nbsp; para siempre, mi patita &nbsp; 🦆
+            </p>
+
+
+            <div class="final-firma">
+
+                Con todo mi amor,
+
+                <br>
+
+                <strong>
+                    para ti. 💜
+                </strong>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+         ===================================================== -->
+
+    <script src="js/main.js"></script>
+
+</body>
+
+</html>

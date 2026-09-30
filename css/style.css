@@ -1,0 +1,3538 @@
+/* =========================================================
+   PARA MI PATITA 💜
+   STYLE.CSS — VERSIÓN COMPLETA
+   ========================================================= */
+
+
+/* =========================================================
+   VARIABLES
+   ========================================================= */
+
+:root {
+
+    --negro: #08040f;
+    --fondo: #10071b;
+    --fondo-2: #170b27;
+    --fondo-3: #211039;
+
+    --morado: #9b63ff;
+    --morado-2: #b987ff;
+    --lila: #d9bdff;
+
+    --rosa: #ffb9e8;
+    --rosa-2: #ff8bd5;
+
+    --blanco: #ffffff;
+    --texto: #ddd0e9;
+    --texto-suave: #a99ab8;
+
+    --borde: rgba(210, 180, 255, 0.22);
+
+    --sombra:
+        0 20px 70px rgba(0, 0, 0, 0.45);
+}
+
+
+/* =========================================================
+   RESET
+   ========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+
+    background: var(--negro);
+
+    color: var(--blanco);
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    overflow-x: hidden;
+}
+
+button,
+input {
+    font-family: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+img,
+video {
+    max-width: 100%;
+}
+
+
+/* =========================================================
+   SELECCIÓN
+   ========================================================= */
+
+::selection {
+
+    background: rgba(180, 125, 255, 0.45);
+
+    color: white;
+}
+
+
+/* =========================================================
+   BARRA DE SCROLL
+   ========================================================= */
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #08040e;
+}
+
+::-webkit-scrollbar-thumb {
+
+    background:
+        linear-gradient(
+            #8e56ee,
+            #d09aff
+        );
+
+    border-radius: 20px;
+}
+
+
+/* =========================================================
+   ESTRELLAS
+   ========================================================= */
+
+.estrellas-fondo {
+
+    position: absolute;
+
+    inset: 0;
+
+    overflow: hidden;
+
+    pointer-events: none;
+
+    opacity: 0.75;
+}
+
+.estrellas-fondo::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background-image:
+
+        radial-gradient(
+            circle,
+            rgba(255,255,255,0.9) 1px,
+            transparent 1px
+        ),
+
+        radial-gradient(
+            circle,
+            rgba(207,174,255,0.8) 1px,
+            transparent 1px
+        ),
+
+        radial-gradient(
+            circle,
+            rgba(255,184,232,0.7) 1px,
+            transparent 1px
+        );
+
+    background-size:
+        90px 90px,
+        150px 150px,
+        220px 220px;
+
+    background-position:
+        15px 20px,
+        50px 80px,
+        100px 40px;
+
+    animation:
+        moverEstrellas 30s linear infinite;
+}
+
+.estrellas-fondo::after {
+
+    content: "";
+
+    position: absolute;
+
+    inset: -20%;
+
+    background:
+        radial-gradient(
+            circle at 50% 45%,
+            rgba(159,95,255,0.18),
+            transparent 35%
+        );
+
+    filter: blur(20px);
+}
+
+@keyframes moverEstrellas {
+
+    from {
+        transform: translateY(0);
+    }
+
+    to {
+        transform: translateY(-120px);
+    }
+}
+
+
+/* =========================================================
+   PANTALLA DE BLOQUEO
+   ========================================================= */
+
+.pantalla-entrada {
+
+    position: relative;
+
+    min-height: 100vh;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 40px 20px;
+
+    overflow: hidden;
+
+    text-align: center;
+
+    background:
+
+        radial-gradient(
+            circle at 50% 35%,
+            rgba(140,78,235,0.25),
+            transparent 30%
+        ),
+
+        radial-gradient(
+            circle at 20% 80%,
+            rgba(255,130,210,0.08),
+            transparent 30%
+        ),
+
+        linear-gradient(
+            160deg,
+            #09040f,
+            #160925,
+            #0a0410
+        );
+
+    transition:
+        opacity 1s ease,
+        visibility 1s ease;
+}
+
+.pantalla-entrada.oculta {
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   LUZ DE ENTRADA
+   ========================================================= */
+
+.entrada-luz {
+
+    position: absolute;
+
+    width: 500px;
+    height: 500px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(157,100,255,0.18),
+            transparent 65%
+        );
+
+    filter: blur(10px);
+
+    animation:
+        luzRespira 5s ease-in-out infinite;
+}
+
+@keyframes luzRespira {
+
+    0%,
+    100% {
+        transform: scale(0.9);
+        opacity: 0.5;
+    }
+
+    50% {
+        transform: scale(1.15);
+        opacity: 1;
+    }
+}
+
+
+/* =========================================================
+   CORAZÓN DE ENTRADA
+   ========================================================= */
+
+.entrada-corazon {
+
+    position: relative;
+
+    z-index: 2;
+
+    font-size: 90px;
+
+    color: var(--lila);
+
+    text-shadow:
+
+        0 0 15px var(--morado),
+
+        0 0 45px var(--morado),
+
+        0 0 90px rgba(255,150,225,0.4);
+
+    animation:
+        latido 2s ease-in-out infinite;
+}
+
+@keyframes latido {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.12);
+    }
+}
+
+
+/* =========================================================
+   TEXTOS ENTRADA
+   ========================================================= */
+
+.entrada-mini {
+
+    position: relative;
+
+    z-index: 2;
+
+    margin-top: 20px;
+
+    color: var(--lila);
+
+    font-size: 10px;
+
+    letter-spacing: 5px;
+}
+
+.pantalla-entrada h1 {
+
+    position: relative;
+
+    z-index: 2;
+
+    margin-top: 15px;
+
+    font-size:
+        clamp(
+            44px,
+            8vw,
+            78px
+        );
+
+    font-weight: 400;
+
+    background:
+
+        linear-gradient(
+            90deg,
+            white,
+            #d8b8ff,
+            #ffcaee,
+            white
+        );
+
+    background-size: 250% auto;
+
+    -webkit-background-clip: text;
+
+    background-clip: text;
+
+    color: transparent;
+
+    animation:
+        textoBrilla 6s linear infinite;
+}
+
+@keyframes textoBrilla {
+
+    to {
+        background-position: 250% center;
+    }
+}
+
+.entrada-texto {
+
+    position: relative;
+
+    z-index: 2;
+
+    margin-top: 18px;
+
+    color: var(--texto);
+
+    font-size: 17px;
+
+    line-height: 1.8;
+}
+
+.entrada-subtexto {
+
+    position: relative;
+
+    z-index: 2;
+
+    margin-top: 12px;
+
+    color: var(--texto-suave);
+
+    font-size: 13px;
+
+    line-height: 1.7;
+
+    font-style: italic;
+}
+
+
+/* =========================================================
+   CAMPO DE FECHA
+   ========================================================= */
+
+.entrada-fecha {
+
+    position: relative;
+
+    z-index: 5;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    margin-top: 30px;
+
+    width: 250px;
+
+    height: 60px;
+
+    border: 1px solid var(--borde);
+
+    border-radius: 50px;
+
+    background:
+        rgba(255,255,255,0.045);
+
+    box-shadow:
+        inset 0 0 25px rgba(0,0,0,0.2),
+        0 0 35px rgba(140,80,240,0.08);
+
+    backdrop-filter: blur(12px);
+
+    transition:
+        border 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.entrada-fecha:focus-within {
+
+    border-color:
+        rgba(201,166,255,0.65);
+
+    box-shadow:
+        0 0 30px rgba(157,108,255,0.25);
+}
+
+.candado {
+
+    position: absolute;
+
+    left: 20px;
+
+    color: var(--morado-2);
+
+    font-size: 21px;
+
+    pointer-events: none;
+}
+
+.entrada-fecha input {
+
+    width: 100%;
+
+    height: 100%;
+
+    padding:
+        0 20px 0 55px;
+
+    border: none;
+
+    outline: none;
+
+    background: transparent;
+
+    color: white;
+
+    font-size: 20px;
+
+    letter-spacing: 7px;
+
+    text-align: center;
+}
+
+.entrada-fecha input::placeholder {
+
+    color:
+        rgba(255,255,255,0.25);
+
+    letter-spacing: 8px;
+}
+
+
+/* =========================================================
+   ERROR
+   ========================================================= */
+
+.error-fecha {
+
+    position: relative;
+
+    z-index: 5;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    max-width: 330px;
+
+    margin-top: 16px;
+
+    padding: 10px 17px;
+
+    border:
+        1px solid
+        rgba(255,150,220,0.18);
+
+    border-radius: 30px;
+
+    background:
+        rgba(255,130,210,0.06);
+
+    color: #eec8e7;
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    transform:
+        translateY(-8px)
+        scale(0.95);
+
+    transition:
+        opacity 0.3s ease,
+        visibility 0.3s ease,
+        transform 0.3s ease;
+}
+
+.error-fecha.visible {
+
+    opacity: 1;
+
+    visibility: visible;
+
+    transform:
+        translateY(0)
+        scale(1);
+}
+
+.error-icon {
+
+    color: var(--rosa);
+
+    animation:
+        brilloError 1.5s infinite;
+}
+
+@keyframes brilloError {
+
+    0%,
+    100% {
+        opacity: 0.4;
+    }
+
+    50% {
+        opacity: 1;
+    }
+}
+
+.error-fecha p {
+
+    font-size: 12px;
+
+    line-height: 1.5;
+}
+
+.entrada-fecha.error {
+
+    animation:
+        campoError 0.5s ease;
+}
+
+@keyframes campoError {
+
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+
+    20% {
+        transform: translateX(-9px);
+    }
+
+    40% {
+        transform: translateX(8px);
+    }
+
+    60% {
+        transform: translateX(-6px);
+    }
+
+    80% {
+        transform: translateX(4px);
+    }
+}
+
+
+/* =========================================================
+   BOTÓN ENTRADA
+   ========================================================= */
+
+.btn-entrada {
+
+    position: relative;
+
+    z-index: 5;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    margin-top: 20px;
+
+    padding:
+        15px 27px;
+
+    border:
+        1px solid
+        rgba(220,190,255,0.3);
+
+    border-radius: 50px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #8c54e8,
+            #c184ff
+        );
+
+    color: white;
+
+    font-size: 15px;
+
+    box-shadow:
+        0 12px 35px
+        rgba(130,70,220,0.35);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.btn-entrada:hover {
+
+    transform:
+        translateY(-3px);
+
+    box-shadow:
+        0 18px 45px
+        rgba(150,90,240,0.5);
+}
+
+.btn-entrada span {
+
+    font-size: 18px;
+}
+
+.entrada-pista {
+
+    position: relative;
+
+    z-index: 2;
+
+    margin-top: 25px;
+
+    color:
+        rgba(255,255,255,0.35);
+
+    font-size: 11px;
+
+    font-style: italic;
+}
+
+
+/* =========================================================
+   DECORACIONES ENTRADA
+   ========================================================= */
+
+.entrada-decoracion {
+
+    position: absolute;
+
+    color:
+        rgba(208,170,255,0.45);
+
+    pointer-events: none;
+}
+
+.decoracion-uno {
+
+    left: 12%;
+
+    top: 25%;
+
+    font-size: 25px;
+
+    animation:
+        flotando 4s ease-in-out infinite;
+}
+
+.decoracion-dos {
+
+    right: 14%;
+
+    top: 30%;
+
+    font-size: 14px;
+
+    animation:
+        flotando 5s ease-in-out infinite reverse;
+}
+
+.decoracion-tres {
+
+    left: 18%;
+
+    bottom: 20%;
+
+    font-size: 18px;
+
+    animation:
+        flotando 6s ease-in-out infinite;
+}
+
+@keyframes flotando {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-14px);
+    }
+}
+
+
+/* =========================================================
+   INICIO
+   ========================================================= */
+
+.inicio {
+
+    position: relative;
+
+    min-height: 100vh;
+
+    overflow: hidden;
+
+    background:
+
+        radial-gradient(
+            circle at 50% 45%,
+            rgba(145,78,240,0.25),
+            transparent 28%
+        ),
+
+        radial-gradient(
+            circle at 15% 80%,
+            rgba(255,130,215,0.07),
+            transparent 25%
+        ),
+
+        linear-gradient(
+            180deg,
+            #10061b,
+            #1a0b2c,
+            #0b0413
+        );
+}
+
+.hero-inicio {
+
+    position: relative;
+
+    z-index: 2;
+
+    min-height: 100vh;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding:
+        90px 20px 60px;
+}
+
+
+/* =========================================================
+   LUNA
+   ========================================================= */
+
+.luna {
+
+    position: absolute;
+
+    top: 40px;
+
+    right: 7%;
+
+    z-index: 2;
+
+    color: #eee3ff;
+
+    font-size: 60px;
+
+    opacity: 0.75;
+
+    text-shadow:
+        0 0 30px rgba(220,190,255,0.45);
+
+    transform: rotate(-15deg);
+}
+
+
+/* =========================================================
+   TÍTULO INICIO
+   ========================================================= */
+
+.titulo-inicio {
+
+    position: relative;
+
+    z-index: 5;
+
+    text-align: center;
+}
+
+.titulo-inicio > span {
+
+    color: var(--lila);
+
+    font-size: 10px;
+
+    letter-spacing: 5px;
+}
+
+.titulo-inicio h2 {
+
+    margin-top: 15px;
+
+    font-size:
+        clamp(
+            42px,
+            8vw,
+            75px
+        );
+
+    line-height: 1.03;
+
+    font-weight: 400;
+}
+
+.titulo-inicio h2 em {
+
+    color: var(--rosa);
+
+    font-weight: 400;
+
+    text-shadow:
+        0 0 30px rgba(255,150,220,0.3);
+}
+
+.decoracion-titulo {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 15px;
+
+    margin: 20px 0;
+
+    color: var(--lila);
+}
+
+.decoracion-titulo i {
+
+    width: 80px;
+
+    height: 1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(210,175,255,0.55)
+        );
+}
+
+.decoracion-titulo i:last-child {
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(210,175,255,0.55),
+            transparent
+        );
+}
+
+.titulo-inicio p {
+
+    color: var(--texto-suave);
+
+    font-size: 15px;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   CORAZÓN
+   ========================================================= */
+
+.zona-corazon {
+
+    position: relative;
+
+    width:
+        min(92vw, 560px);
+
+    height: 480px;
+
+    margin-top: 10px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+}
+
+#canvasCorazon {
+
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+
+    height: 100%;
+
+    pointer-events: none;
+}
+
+.boton-corazon {
+
+    position: relative;
+
+    z-index: 8;
+
+    width: 145px;
+
+    height: 145px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background:
+
+        radial-gradient(
+            circle at 30% 25%,
+            #f5dcff,
+            #bd83ff 35%,
+            #7437c3 68%,
+            #321050
+        );
+
+    box-shadow:
+
+        0 0 20px
+        rgba(207,160,255,0.9),
+
+        0 0 60px
+        rgba(151,78,255,0.55),
+
+        0 0 120px
+        rgba(151,78,255,0.25);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.boton-corazon:hover {
+
+    transform:
+        scale(1.08);
+
+    box-shadow:
+
+        0 0 30px
+        rgba(220,180,255,1),
+
+        0 0 80px
+        rgba(155,80,255,0.7),
+
+        0 0 150px
+        rgba(155,80,255,0.35);
+}
+
+.boton-corazon:active {
+
+    transform:
+        scale(0.92);
+}
+
+.nucleo-corazon {
+
+    display: block;
+
+    color: white;
+
+    font-size: 75px;
+
+    line-height: 1;
+
+    text-shadow:
+
+        0 0 10px white,
+
+        0 0 30px #d8b1ff;
+}
+
+
+/* =========================================================
+   ANILLOS
+   ========================================================= */
+
+.anillo-corazon {
+
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+
+    border:
+        1px solid
+        rgba(205,165,255,0.25);
+
+    border-radius: 50%;
+
+    transform:
+        translate(-50%, -50%);
+
+    pointer-events: none;
+}
+
+.anillo-uno {
+
+    width: 230px;
+    height: 230px;
+
+    animation:
+        pulsoAnillo 4s infinite;
+}
+
+.anillo-dos {
+
+    width: 330px;
+    height: 330px;
+
+    border-color:
+        rgba(255,180,230,0.12);
+
+    animation:
+        pulsoAnillo 5s infinite reverse;
+}
+
+.anillo-tres {
+
+    width: 440px;
+    height: 440px;
+
+    border-color:
+        rgba(165,110,255,0.08);
+
+    animation:
+        pulsoAnillo 7s infinite;
+}
+
+@keyframes pulsoAnillo {
+
+    0%,
+    100% {
+        transform:
+            translate(-50%, -50%)
+            scale(0.96);
+
+        opacity: 0.4;
+    }
+
+    50% {
+        transform:
+            translate(-50%, -50%)
+            scale(1.04);
+
+        opacity: 1;
+    }
+}
+
+
+/* =========================================================
+   INDICADOR
+   ========================================================= */
+
+.indicador {
+
+    position: relative;
+
+    z-index: 5;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 5px;
+
+    color:
+        rgba(255,255,255,0.55);
+
+    font-size: 11px;
+
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
+
+    animation:
+        indicador 2s ease-in-out infinite;
+}
+
+.indicador b {
+
+    color: var(--lila);
+
+    font-size: 20px;
+}
+
+@keyframes indicador {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(8px);
+    }
+}
+
+
+/* =========================================================
+   PATITOS
+   ========================================================= */
+
+.patitos {
+
+    position: relative;
+
+    z-index: 5;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    margin-top: 25px;
+
+    color:
+        rgba(255,255,255,0.6);
+
+    font-size: 13px;
+
+    font-style: italic;
+}
+
+.patitos b {
+
+    color: var(--rosa);
+}
+
+.patito {
+
+    font-size: 23px;
+
+    filter:
+        drop-shadow(
+            0 0 7px
+            rgba(255,220,100,0.25)
+        );
+}
+
+.patito-uno {
+
+    animation:
+        pato1 2.5s infinite ease-in-out;
+}
+
+.patito-dos {
+
+    animation:
+        pato2 2.5s infinite ease-in-out;
+}
+
+@keyframes pato1 {
+
+    0%,
+    100% {
+        transform:
+            translateY(0)
+            rotate(-5deg);
+    }
+
+    50% {
+        transform:
+            translateY(-8px)
+            rotate(5deg);
+    }
+}
+
+@keyframes pato2 {
+
+    0%,
+    100% {
+        transform:
+            translateY(-5px)
+            rotate(5deg);
+    }
+
+    50% {
+        transform:
+            translateY(3px)
+            rotate(-5deg);
+    }
+}
+
+
+/* =========================================================
+   SORPRESA
+   ========================================================= */
+
+.sorpresa {
+
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 20;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 30px;
+
+    text-align: center;
+
+    background:
+
+        radial-gradient(
+            circle at center,
+            rgba(65,30,110,0.98),
+            rgba(10,4,18,0.99) 72%
+        );
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    pointer-events: none;
+
+    transform: scale(1.05);
+
+    transition:
+        opacity 0.9s ease,
+        visibility 0.9s ease,
+        transform 0.9s ease;
+}
+
+.sorpresa.visible {
+
+    opacity: 1;
+
+    visibility: visible;
+
+    pointer-events: auto;
+
+    transform: scale(1);
+}
+
+.sorpresa-brillo {
+
+    position: absolute;
+
+    width: 500px;
+
+    height: 500px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(190,130,255,0.18),
+            transparent 65%
+        );
+
+    filter: blur(10px);
+
+    animation:
+        luzRespira 4s infinite;
+}
+
+.sorpresa-contenido {
+
+    position: relative;
+
+    z-index: 2;
+
+    max-width: 700px;
+}
+
+.sorpresa-corazon {
+
+    color: var(--rosa);
+
+    font-size: 70px;
+
+    text-shadow:
+
+        0 0 15px #ffb9e8,
+
+        0 0 50px
+        rgba(255,120,210,0.5);
+
+    animation:
+        latido 2s infinite;
+}
+
+.sorpresa-mini {
+
+    margin-top: 10px;
+
+    color: var(--lila);
+
+    font-size: 10px;
+
+    letter-spacing: 4px;
+}
+
+.sorpresa-texto {
+
+    margin-top: 15px;
+
+    color: var(--texto-suave);
+
+    font-size: 15px;
+
+    line-height: 1.7;
+}
+
+.sorpresa h2 {
+
+    margin-top: 15px;
+
+    font-size:
+        clamp(
+            35px,
+            7vw,
+            65px
+        );
+
+    line-height: 1.05;
+
+    font-weight: 400;
+}
+
+.sorpresa-secundaria {
+
+    margin-top: 20px;
+
+    color:
+        rgba(255,255,255,0.55);
+
+    font-size: 14px;
+
+    line-height: 1.7;
+}
+
+.btn-historia {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    margin-top: 28px;
+
+    padding:
+        15px 25px;
+
+    border:
+        1px solid
+        rgba(210,170,255,0.3);
+
+    border-radius: 50px;
+
+    background:
+        rgba(157,108,255,0.15);
+
+    color: white;
+
+    font-size: 14px;
+
+    backdrop-filter: blur(10px);
+
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease;
+}
+
+.btn-historia:hover {
+
+    transform:
+        translateY(-3px);
+
+    background:
+        rgba(157,108,255,0.3);
+}
+
+
+/* =========================================================
+   PRIMER VIAJE
+   ========================================================= */
+
+.primer-viaje {
+
+    position: relative;
+
+    min-height: 100vh;
+
+    padding:
+        110px 20px 100px;
+
+    overflow: hidden;
+
+    background:
+
+        radial-gradient(
+            circle at 50% 10%,
+            rgba(147,82,230,0.2),
+            transparent 30%
+        ),
+
+        linear-gradient(
+            180deg,
+            #0b0413,
+            #180a2b,
+            #0a0412
+        );
+
+    opacity: 0;
+
+    transform: translateY(35px);
+
+    transition:
+        opacity 1s ease,
+        transform 1s ease;
+}
+
+.primer-viaje.visible {
+
+    opacity: 1;
+
+    transform: translateY(0);
+}
+
+.viaje-fondo {
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+
+        radial-gradient(
+            circle at 10% 30%,
+            rgba(255,170,225,0.06),
+            transparent 25%
+        ),
+
+        radial-gradient(
+            circle at 90% 70%,
+            rgba(160,100,255,0.08),
+            transparent 25%
+        );
+}
+
+.viaje-estrellas {
+
+    position: absolute;
+
+    inset: 0;
+
+    opacity: 0.35;
+
+    background-image:
+        radial-gradient(
+            circle,
+            rgba(255,255,255,0.7) 1px,
+            transparent 1px
+        );
+
+    background-size: 130px 130px;
+}
+
+.viaje-contenido {
+
+    position: relative;
+
+    z-index: 2;
+
+    max-width: 900px;
+
+    margin: auto;
+
+    text-align: center;
+}
+
+.etiqueta {
+
+    display: inline-block;
+
+    padding:
+        8px 18px;
+
+    border:
+        1px solid
+        rgba(200,165,255,0.25);
+
+    border-radius: 50px;
+
+    color: var(--lila);
+
+    background:
+        rgba(255,255,255,0.03);
+
+    font-size: 9px;
+
+    letter-spacing: 4px;
+}
+
+
+/* =========================================================
+   FECHA VIAJE
+   ========================================================= */
+
+.fecha-viaje {
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    margin-top: 35px;
+}
+
+.fecha-viaje strong {
+
+    color: white;
+
+    font-size:
+        clamp(
+            90px,
+            17vw,
+            160px
+        );
+
+    line-height: 0.8;
+
+    font-weight: 400;
+
+    text-shadow:
+        0 0 40px
+        rgba(175,120,255,0.25);
+}
+
+.fecha-viaje span {
+
+    margin-top: 15px;
+
+    color: var(--lila);
+
+    font-size: 13px;
+
+    letter-spacing: 8px;
+}
+
+.separador-viaje {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 15px;
+
+    margin: 30px auto;
+
+    color: var(--rosa);
+}
+
+.separador-viaje i {
+
+    width: 90px;
+
+    height: 1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(205,170,255,0.5)
+        );
+}
+
+.separador-viaje i:last-child {
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(205,170,255,0.5),
+            transparent
+        );
+}
+
+.viaje-contenido > h2 {
+
+    font-size:
+        clamp(
+            38px,
+            7vw,
+            68px
+        );
+
+    line-height: 1.05;
+
+    font-weight: 400;
+}
+
+.viaje-introduccion {
+
+    max-width: 650px;
+
+    margin:
+        22px auto 0;
+
+    color: var(--texto);
+
+    font-size: 16px;
+
+    line-height: 1.9;
+}
+
+
+/* =========================================================
+   FOTO RECUERDO
+   ========================================================= */
+
+.foto-recuerdo {
+
+    margin-top: 55px;
+}
+
+.foto-marco {
+
+    position: relative;
+
+    width:
+        min(90vw, 650px);
+
+    margin: auto;
+
+    padding: 12px;
+
+    background:
+        linear-gradient(
+            135deg,
+            white,
+            #d8c0ff,
+            white
+        );
+
+    box-shadow:
+        var(--sombra),
+
+        0 0 50px
+        rgba(160,100,255,0.13);
+
+    transform: rotate(-1deg);
+
+    transition:
+        transform 0.5s ease;
+}
+
+.foto-marco:hover {
+
+    transform:
+        rotate(0)
+        scale(1.015);
+}
+
+.foto-marco img {
+
+    display: block;
+
+    width: 100%;
+
+    max-height: 650px;
+
+    object-fit: cover;
+}
+
+.foto-brillo {
+
+    position: absolute;
+
+    inset: 12px;
+
+    background:
+        linear-gradient(
+            110deg,
+            transparent 20%,
+            rgba(255,255,255,0.4),
+            transparent 45%
+        );
+
+    opacity: 0;
+
+    transition:
+        0.8s ease;
+
+    pointer-events: none;
+}
+
+.foto-marco:hover .foto-brillo {
+
+    opacity: 1;
+
+    transform:
+        translateX(20%);
+}
+
+.foto-recuerdo > p {
+
+    margin-top: 22px;
+
+    color:
+        rgba(255,255,255,0.55);
+
+    font-size: 13px;
+
+    font-style: italic;
+}
+
+
+/* =========================================================
+   VIDEO
+   ========================================================= */
+
+.video-seccion {
+
+    margin-top: 100px;
+}
+
+.video-mini {
+
+    color: var(--lila);
+
+    font-size: 10px;
+
+    letter-spacing: 4px;
+}
+
+.video-seccion h3 {
+
+    margin-top: 13px;
+
+    font-size:
+        clamp(
+            30px,
+            6vw,
+            52px
+        );
+
+    font-weight: 400;
+}
+
+.video-descripcion {
+
+    margin-top: 12px;
+
+    color: var(--texto-suave);
+
+    font-size: 15px;
+}
+
+.video-marco {
+
+    position: relative;
+
+    width:
+        min(95vw, 760px);
+
+    margin:
+        35px auto 0;
+
+    padding: 10px;
+
+    border:
+        1px solid
+        rgba(205,170,255,0.25);
+
+    border-radius: 10px;
+
+    background:
+        rgba(255,255,255,0.035);
+
+    box-shadow:
+        0 30px 80px
+        rgba(0,0,0,0.5),
+
+        0 0 50px
+        rgba(155,95,255,0.1);
+
+    overflow: hidden;
+}
+
+.video-marco video {
+
+    display: block;
+
+    width: 100%;
+
+    max-height: 680px;
+
+    border-radius: 5px;
+
+    background: black;
+}
+
+.video-luz {
+
+    position: absolute;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    background:
+        linear-gradient(
+            110deg,
+            transparent 25%,
+            rgba(255,255,255,0.08),
+            transparent 45%
+        );
+}
+
+
+/* =========================================================
+   FRASE VIAJE
+   ========================================================= */
+
+.frase-viaje {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 20px;
+
+    max-width: 700px;
+
+    margin:
+        75px auto 0;
+}
+
+.frase-viaje span {
+
+    color: var(--lila);
+
+    font-size: 15px;
+}
+
+.frase-viaje p {
+
+    color: #e5d9f0;
+
+    font-size: 18px;
+
+    line-height: 1.7;
+
+    font-style: italic;
+}
+
+.btn-siguiente {
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 8px;
+
+    margin-top: 70px;
+
+    border: none;
+
+    background: transparent;
+
+    color:
+        rgba(255,255,255,0.6);
+
+    font-size: 13px;
+
+    transition:
+        transform 0.3s ease;
+}
+
+.btn-siguiente:hover {
+
+    transform:
+        translateY(4px);
+
+    color: white;
+}
+
+.btn-siguiente b {
+
+    color: var(--lila);
+
+    font-size: 25px;
+
+    animation:
+        indicador 2s infinite;
+}
+
+
+/* =========================================================
+   30 DE MAYO
+   ========================================================= */
+
+.seccion-30-mayo {
+
+    position: relative;
+
+    min-height: 100vh;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding:
+        100px 20px;
+
+    overflow: hidden;
+
+    background:
+
+        radial-gradient(
+            circle at 50% 50%,
+            rgba(255,110,205,0.12),
+            transparent 35%
+        ),
+
+        linear-gradient(
+            145deg,
+            #110619,
+            #241039,
+            #0c0412
+        );
+}
+
+.mayo-fondo {
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        radial-gradient(
+            circle at 20% 30%,
+            rgba(150,90,255,0.1),
+            transparent 25%
+        );
+}
+
+.mayo-contenido {
+
+    position: relative;
+
+    z-index: 2;
+
+    max-width: 800px;
+
+    text-align: center;
+}
+
+.mayo-mini {
+
+    color: var(--lila);
+
+    font-size: 10px;
+
+    letter-spacing: 4px;
+}
+
+.mayo-fecha {
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    margin-top: 35px;
+}
+
+.mayo-fecha strong {
+
+    font-size:
+        clamp(
+            100px,
+            18vw,
+            180px
+        );
+
+    font-weight: 400;
+
+    line-height: 0.8;
+
+    text-shadow:
+        0 0 45px
+        rgba(200,130,255,0.3);
+}
+
+.mayo-fecha span {
+
+    margin-top: 15px;
+
+    color: var(--rosa);
+
+    font-size: 14px;
+
+    letter-spacing: 10px;
+}
+
+.mayo-corazon {
+
+    margin-top: 25px;
+
+    color: var(--rosa);
+
+    font-size: 35px;
+
+    animation:
+        latido 2s infinite;
+}
+
+.mayo-contenido h2 {
+
+    margin-top: 15px;
+
+    font-size:
+        clamp(
+            38px,
+            7vw,
+            68px
+        );
+
+    line-height: 1.05;
+
+    font-weight: 400;
+}
+
+.mayo-texto {
+
+    max-width: 600px;
+
+    margin:
+        25px auto 0;
+
+    color: var(--texto);
+
+    font-size: 16px;
+
+    line-height: 1.8;
+}
+
+.mayo-foto {
+
+    width:
+        min(90vw, 570px);
+
+    margin:
+        45px auto 0;
+
+    padding: 10px;
+
+    background:
+        linear-gradient(
+            135deg,
+            white,
+            #d8c2ff,
+            white
+        );
+
+    box-shadow:
+        var(--sombra);
+}
+
+.mayo-foto img {
+
+    display: block;
+
+    width: 100%;
+}
+
+.mayo-final {
+
+    margin-top: 25px;
+
+    color: var(--texto-suave);
+
+    font-size: 14px;
+
+    font-style: italic;
+}
+
+.btn-memorias,
+.btn-ella,
+.btn-final {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    margin-top: 35px;
+
+    padding:
+        14px 25px;
+
+    border:
+        1px solid
+        rgba(205,170,255,0.25);
+
+    border-radius: 50px;
+
+    background:
+        rgba(157,108,255,0.12);
+
+    color: white;
+
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease;
+}
+
+.btn-memorias:hover,
+.btn-ella:hover,
+.btn-final:hover {
+
+    transform:
+        translateY(-3px);
+
+    background:
+        rgba(157,108,255,0.25);
+}
+
+
+/* =========================================================
+   RECUERDOS
+   ========================================================= */
+
+.seccion-recuerdos {
+
+    position: relative;
+
+    min-height: 100vh;
+
+    padding:
+        120px 20px;
+
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            180deg,
+            #0c0413,
+            #180a29
+        );
+}
+
+.recuerdos-fondo {
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        radial-gradient(
+            circle at 50% 25%,
+            rgba(180,110,255,0.16),
+            transparent 30%
+        );
+}
+
+.recuerdos-contenido {
+
+    position: relative;
+
+    z-index: 2;
+
+    max-width: 900px;
+
+    margin: auto;
+
+    text-align: center;
+}
+
+.recuerdos-mini {
+
+    color: var(--lila);
+
+    font-size: 10px;
+
+    letter-spacing: 5px;
+}
+
+.recuerdos-contenido h2 {
+
+    margin-top: 15px;
+
+    font-size:
+        clamp(
+            45px,
+            8vw,
+            80px
+        );
+
+    font-weight: 400;
+
+    line-height: 1;
+}
+
+.recuerdos-contenido h2 em {
+
+    color: var(--rosa);
+
+    font-weight: 400;
+}
+
+.recuerdos-decoracion {
+
+    margin: 20px 0;
+
+    color: var(--lila);
+
+    font-size: 20px;
+}
+
+.recuerdo-principal {
+
+    width:
+        min(90vw, 650px);
+
+    margin:
+        30px auto 0;
+
+    padding: 10px;
+
+    background:
+        linear-gradient(
+            135deg,
+            white,
+            #d6baff,
+            white
+        );
+
+    box-shadow:
+        var(--sombra);
+}
+
+.recuerdo-principal img {
+
+    display: block;
+
+    width: 100%;
+}
+
+.recuerdos-texto {
+
+    max-width: 650px;
+
+    margin:
+        30px auto 0;
+
+    color: var(--texto);
+
+    font-size: 16px;
+
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   TARJETAS
+   ========================================================= */
+
+.recuerdos-tarjetas {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            3,
+            1fr
+        );
+
+    gap: 18px;
+
+    max-width: 850px;
+
+    margin:
+        55px auto 0;
+}
+
+.tarjeta-recuerdo {
+
+    padding:
+        30px 20px;
+
+    border:
+        1px solid
+        rgba(205,170,255,0.15);
+
+    border-radius: 15px;
+
+    background:
+        rgba(255,255,255,0.035);
+
+    backdrop-filter: blur(10px);
+
+    transition:
+        transform 0.3s ease,
+        border 0.3s ease;
+}
+
+.tarjeta-recuerdo:hover {
+
+    transform:
+        translateY(-7px);
+
+    border-color:
+        rgba(205,170,255,0.4);
+}
+
+.tarjeta-recuerdo span {
+
+    color: var(--rosa);
+
+    font-size: 25px;
+}
+
+.tarjeta-recuerdo h3 {
+
+    margin-top: 15px;
+
+    font-size: 20px;
+
+    font-weight: 400;
+}
+
+.tarjeta-recuerdo p {
+
+    margin-top: 10px;
+
+    color: var(--texto-suave);
+
+    font-size: 13px;
+
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   SECCIÓN ELLA
+   ========================================================= */
+
+.seccion-ella {
+
+    position: relative;
+
+    min-height: 100vh;
+
+    padding:
+        120px 20px;
+
+    overflow: hidden;
+
+    background:
+
+        radial-gradient(
+            circle at 50% 30%,
+            rgba(255,140,215,0.12),
+            transparent 35%
+        ),
+
+        #0b0412;
+}
+
+.ella-fondo {
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        radial-gradient(
+            circle at 80% 70%,
+            rgba(145,85,230,0.12),
+            transparent 30%
+        );
+}
+
+.ella-contenido {
+
+    position: relative;
+
+    z-index: 2;
+
+    max-width: 800px;
+
+    margin: auto;
+
+    text-align: center;
+}
+
+.ella-foto {
+
+    width:
+        min(75vw, 350px);
+
+    margin:
+        auto auto 40px;
+
+    padding: 9px;
+
+    background:
+        linear-gradient(
+            135deg,
+            white,
+            #d6baff,
+            white
+        );
+
+    box-shadow:
+        0 30px 70px rgba(0,0,0,0.45);
+}
+
+.ella-foto img {
+
+    display: block;
+
+    width: 100%;
+}
+
+.ella-mini {
+
+    color: var(--lila);
+
+    font-size: 10px;
+
+    letter-spacing: 5px;
+}
+
+.ella-contenido h2 {
+
+    margin-top: 15px;
+
+    font-size:
+        clamp(
+            38px,
+            7vw,
+            68px
+        );
+
+    line-height: 1.05;
+
+    font-weight: 400;
+}
+
+.ella-linea {
+
+    margin: 25px 0;
+
+    color: var(--rosa);
+
+    font-size: 22px;
+}
+
+.carta {
+
+    max-width: 650px;
+
+    margin: auto;
+
+    padding:
+        35px 25px;
+
+    border:
+        1px solid
+        rgba(205,170,255,0.14);
+
+    border-radius: 20px;
+
+    background:
+        rgba(255,255,255,0.035);
+
+    backdrop-filter: blur(10px);
+
+    box-shadow:
+        0 25px 70px
+        rgba(0,0,0,0.25);
+}
+
+.carta p {
+
+    margin-bottom: 20px;
+
+    color: var(--texto);
+
+    font-size: 16px;
+
+    line-height: 1.9;
+}
+
+.carta p:last-child {
+
+    margin-bottom: 0;
+}
+
+.carta-destacada {
+
+    color: var(--rosa) !important;
+
+    font-size: 25px !important;
+
+    font-style: italic;
+}
+
+.carta-final {
+
+    color: var(--lila) !important;
+
+    font-size: 18px !important;
+}
+
+
+/* =========================================================
+   CONTADOR
+   ========================================================= */
+
+.seccion-contador {
+
+    position: relative;
+
+    min-height: 75vh;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding:
+        100px 20px;
+
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            180deg,
+            #0b0412,
+            #160824
+        );
+}
+
+.contador-fondo {
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(145,85,230,0.15),
+            transparent 40%
+        );
+}
+
+.contador-contenido {
+
+    position: relative;
+
+    z-index: 2;
+
+    max-width: 900px;
+
+    text-align: center;
+}
+
+.contador-mini {
+
+    color: var(--lila);
+
+    font-size: 10px;
+
+    letter-spacing: 5px;
+}
+
+.contador-contenido h2 {
+
+    margin-top: 20px;
+
+    font-size:
+        clamp(
+            35px,
+            6vw,
+            60px
+        );
+
+    font-weight: 400;
+
+    line-height: 1.1;
+}
+
+.contador-contenido h2 em {
+
+    color: var(--rosa);
+
+    font-weight: 400;
+}
+
+.contador {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            4,
+            1fr
+        );
+
+    gap: 15px;
+
+    max-width: 750px;
+
+    margin:
+        55px auto 0;
+}
+
+.contador-item {
+
+    padding:
+        25px 10px;
+
+    border:
+        1px solid
+        rgba(205,170,255,0.14);
+
+    border-radius: 15px;
+
+    background:
+        rgba(255,255,255,0.035);
+
+    backdrop-filter: blur(8px);
+}
+
+.contador-item strong {
+
+    display: block;
+
+    color: white;
+
+    font-size:
+        clamp(
+            35px,
+            6vw,
+            60px
+        );
+
+    font-weight: 400;
+}
+
+.contador-item span {
+
+    display: block;
+
+    margin-top: 8px;
+
+    color: var(--texto-suave);
+
+    font-size: 12px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 2px;
+}
+
+.contador-frase {
+
+    margin-top: 35px;
+
+    color: var(--texto-suave);
+
+    font-style: italic;
+}
+
+
+/* =========================================================
+   CANCIÓN
+   ========================================================= */
+
+.seccion-cancion {
+
+    min-height: 80vh;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 100px 20px;
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(255,140,220,0.1),
+            transparent 35%
+        ),
+
+        #09040f;
+}
+
+.cancion-contenido {
+
+    text-align: center;
+}
+
+.vinilo {
+
+    position: relative;
+
+    width: 230px;
+    height: 230px;
+
+    margin: auto;
+
+    border-radius: 50%;
+
+    background:
+
+        repeating-radial-gradient(
+            circle,
+            #111 0,
+            #111 3px,
+            #181818 4px,
+            #111 6px
+        );
+
+    box-shadow:
+
+        0 25px 60px
+        rgba(0,0,0,0.6),
+
+        0 0 50px
+        rgba(150,90,255,0.15);
+
+    animation:
+        girarVinilo 12s linear infinite;
+}
+
+@keyframes girarVinilo {
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.vinilo-centro {
+
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+
+    width: 65px;
+    height: 65px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    transform:
+        translate(-50%, -50%);
+
+    border-radius: 50%;
+
+    background:
+        linear-gradient(
+            135deg,
+            #b979ff,
+            #ff9fdd
+        );
+
+    color: white;
+
+    font-size: 30px;
+}
+
+.cancion-mini {
+
+    margin-top: 45px;
+
+    color: var(--lila);
+
+    font-size: 10px;
+
+    letter-spacing: 4px;
+}
+
+.cancion-contenido h2 {
+
+    margin-top: 15px;
+
+    font-size:
+        clamp(
+            40px,
+            7vw,
+            70px
+        );
+
+    font-weight: 400;
+}
+
+.cancion-contenido > p:last-child {
+
+    margin-top: 15px;
+
+    color: var(--texto-suave);
+
+    font-style: italic;
+}
+
+
+/* =========================================================
+   SUEÑOS
+   ========================================================= */
+
+.seccion-suenos {
+
+    min-height: 100vh;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding:
+        100px 20px;
+
+    background:
+        linear-gradient(
+            150deg,
+            #170925,
+            #0a0411
+        );
+}
+
+.suenos-contenido {
+
+    max-width: 850px;
+
+    text-align: center;
+}
+
+.suenos-mini {
+
+    color: var(--lila);
+
+    font-size: 10px;
+
+    letter-spacing: 4px;
+}
+
+.suenos-contenido h2 {
+
+    margin-top: 20px;
+
+    font-size:
+        clamp(
+            38px,
+            7vw,
+            68px
+        );
+
+    font-weight: 400;
+
+    line-height: 1.05;
+}
+
+.suenos-contenido h2 em {
+
+    color: var(--rosa);
+
+    font-weight: 400;
+}
+
+.suenos-lista {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            2,
+            1fr
+        );
+
+    gap: 18px;
+
+    margin-top: 55px;
+}
+
+.sueno {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 20px;
+
+    padding:
+        25px;
+
+    border:
+        1px solid
+        rgba(205,170,255,0.13);
+
+    border-radius: 15px;
+
+    background:
+        rgba(255,255,255,0.035);
+
+    text-align: left;
+}
+
+.sueno span {
+
+    color: var(--rosa);
+
+    font-size: 25px;
+}
+
+.sueno p {
+
+    color: var(--texto);
+
+    font-size: 16px;
+}
+
+.suenos-final {
+
+    margin-top: 50px;
+
+    color: var(--lila);
+
+    font-size: 22px;
+
+    font-style: italic;
+}
+
+
+/* =========================================================
+   FINAL
+   ========================================================= */
+
+.seccion-final {
+
+    position: relative;
+
+    min-height: 100vh;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding:
+        100px 20px;
+
+    overflow: hidden;
+
+    background:
+
+        radial-gradient(
+            circle at center,
+            rgba(148,83,235,0.25),
+            transparent 40%
+        ),
+
+        linear-gradient(
+            180deg,
+            #10061b,
+            #050208
+        );
+}
+
+.final-estrellas {
+
+    position: absolute;
+
+    inset: 0;
+
+    background-image:
+
+        radial-gradient(
+            circle,
+            white 1px,
+            transparent 1px
+        );
+
+    background-size:
+        120px 120px;
+
+    opacity: 0.25;
+
+    animation:
+        moverEstrellas 35s linear infinite;
+}
+
+.final-contenido {
+
+    position: relative;
+
+    z-index: 2;
+
+    max-width: 750px;
+
+    text-align: center;
+}
+
+.final-corazon {
+
+    color: var(--rosa);
+
+    font-size: 90px;
+
+    text-shadow:
+
+        0 0 20px
+        rgba(255,170,225,0.8),
+
+        0 0 70px
+        rgba(190,100,255,0.5);
+
+    animation:
+        latido 2s infinite;
+}
+
+.final-mini {
+
+    margin-top: 20px;
+
+    color: var(--lila);
+
+    font-size: 10px;
+
+    letter-spacing: 4px;
+}
+
+.final-contenido h2 {
+
+    margin-top: 15px;
+
+    font-size:
+        clamp(
+            42px,
+            8vw,
+            75px
+        );
+
+    font-weight: 400;
+
+    line-height: 1.05;
+}
+
+.final-mensaje {
+
+    margin-top: 30px;
+
+    color: var(--texto);
+
+    font-size: 17px;
+
+    line-height: 1.9;
+}
+
+.final-frase {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 20px;
+
+    margin-top: 45px;
+}
+
+.final-frase span {
+
+    color: var(--rosa);
+
+    font-size: 18px;
+}
+
+.final-frase p {
+
+    color: var(--lila);
+
+    font-size: 22px;
+
+    font-style: italic;
+}
+
+.final-patitos {
+
+    margin-top: 30px;
+
+    color:
+        rgba(255,255,255,0.55);
+
+    font-size: 14px;
+}
+
+.final-firma {
+
+    margin-top: 45px;
+
+    color:
+        rgba(255,255,255,0.5);
+
+    font-size: 14px;
+
+    line-height: 1.8;
+}
+
+.final-firma strong {
+
+    color: var(--rosa);
+
+    font-size: 22px;
+
+    font-weight: 400;
+}
+
+
+/* =========================================================
+   ANIMACIONES DEL CORAZÓN
+   ========================================================= */
+
+.zona-corazon.explotando
+.boton-corazon {
+
+    animation:
+        desaparecerCorazon 0.6s forwards;
+}
+
+.zona-corazon.explotando
+.anillo-corazon {
+
+    animation:
+        explotarAnillo 0.9s ease-out forwards;
+}
+
+@keyframes desaparecerCorazon {
+
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    60% {
+        transform: scale(1.25);
+        opacity: 0.6;
+    }
+
+    100% {
+        transform: scale(0);
+        opacity: 0;
+    }
+}
+
+@keyframes explotarAnillo {
+
+    from {
+        transform:
+            translate(-50%, -50%)
+            scale(1);
+
+        opacity: 1;
+    }
+
+    to {
+        transform:
+            translate(-50%, -50%)
+            scale(2.3);
+
+        opacity: 0;
+    }
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+    .pantalla-entrada {
+        padding:
+            30px 18px;
+    }
+
+    .entrada-corazon {
+        font-size: 70px;
+    }
+
+    .entrada-mini {
+        letter-spacing: 3px;
+    }
+
+    .entrada-texto {
+        font-size: 15px;
+    }
+
+    .entrada-subtexto {
+        font-size: 12px;
+    }
+
+    .entrada-fecha {
+        width: 230px;
+    }
+
+    .luna {
+        top: 25px;
+        right: 25px;
+
+        font-size: 45px;
+    }
+
+    .hero-inicio {
+        padding-top: 75px;
+    }
+
+    .titulo-inicio > span {
+        font-size: 8px;
+        letter-spacing: 3px;
+    }
+
+    .zona-corazon {
+        width: 100%;
+        height: 390px;
+    }
+
+    .boton-corazon {
+        width: 120px;
+        height: 120px;
+    }
+
+    .nucleo-corazon {
+        font-size: 62px;
+    }
+
+    .anillo-uno {
+        width: 190px;
+        height: 190px;
+    }
+
+    .anillo-dos {
+        width: 270px;
+        height: 270px;
+    }
+
+    .anillo-tres {
+        width: 350px;
+        height: 350px;
+    }
+
+    .sorpresa {
+        padding: 25px 18px;
+    }
+
+    .sorpresa-corazon {
+        font-size: 55px;
+    }
+
+    .sorpresa-secundaria br {
+        display: none;
+    }
+
+    .primer-viaje {
+        padding:
+            80px 15px;
+    }
+
+    .fecha-viaje strong {
+        font-size: 100px;
+    }
+
+    .fecha-viaje span {
+        font-size: 11px;
+        letter-spacing: 6px;
+    }
+
+    .viaje-introduccion {
+        padding: 0 10px;
+        font-size: 14px;
+    }
+
+    .foto-marco {
+        width: 94vw;
+    }
+
+    .video-marco {
+        width: 96vw;
+        padding: 6px;
+    }
+
+    .frase-viaje {
+        gap: 10px;
+        padding: 0 10px;
+    }
+
+    .frase-viaje p {
+        font-size: 15px;
+    }
+
+    .seccion-30-mayo,
+    .seccion-recuerdos,
+    .seccion-ella,
+    .seccion-contador,
+    .seccion-cancion,
+    .seccion-suenos,
+    .seccion-final {
+        padding:
+            80px 18px;
+    }
+
+    .recuerdos-tarjetas {
+        grid-template-columns: 1fr;
+    }
+
+    .contador {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .suenos-lista {
+        grid-template-columns: 1fr;
+    }
+
+    .final-frase {
+        gap: 10px;
+    }
+
+    .final-frase p {
+        font-size: 18px;
+    }
+}
+
+
+/* =========================================================
+   TELÉFONOS PEQUEÑOS
+   ========================================================= */
+
+@media (max-width: 400px) {
+
+    .pantalla-entrada h1 {
+        font-size: 40px;
+    }
+
+    .titulo-inicio h2 {
+        font-size: 38px;
+    }
+
+    .zona-corazon {
+        height: 350px;
+    }
+
+    .boton-corazon {
+        width: 105px;
+        height: 105px;
+    }
+
+    .nucleo-corazon {
+        font-size: 54px;
+    }
+
+    .anillo-uno {
+        width: 165px;
+        height: 165px;
+    }
+
+    .anillo-dos {
+        width: 235px;
+        height: 235px;
+    }
+
+    .anillo-tres {
+        width: 305px;
+        height: 305px;
+    }
+
+    .fecha-viaje strong {
+        font-size: 85px;
+    }
+
+    .contador-item {
+        padding: 20px 5px;
+    }
+
+    .contador-item strong {
+        font-size: 32px;
+    }
+
+    .contador-item span {
+        font-size: 9px;
+        letter-spacing: 1px;
+    }
+}
