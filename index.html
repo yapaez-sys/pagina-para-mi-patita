@@ -1,892 +1,651 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
-
     <meta charset="UTF-8">
 
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
 
-    <meta
-        name="theme-color"
-        content="#10071c"
-    >
-
-    <meta
-        name="description"
-        content="Una pequeña historia hecha para alguien muy especial."
-    >
+    <meta name="theme-color" content="#12091f">
 
     <title>Para mi patita 💜</title>
 
-    <link
-        rel="stylesheet"
-        href="css/style.css"
-    >
+    <!-- Fuentes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap"
+          rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
 </head>
-
 
 <body>
 
+<!-- =========================================================
+     PANTALLA DE ENTRADA
+========================================================= -->
 
-    <!-- =====================================================
-         PANTALLA DE BLOQUEO
-         ===================================================== -->
+<section id="pantallaEntrada" class="pantalla-entrada">
 
-    <section
-        class="pantalla-entrada"
-        id="pantallaEntrada"
-    >
+    <div id="entrada-estrellas" class="entrada-estrellas"></div>
 
-        <div class="estrellas-fondo"></div>
+    <div class="entrada-luz"></div>
 
-
-        <!-- brillo central -->
-
-        <div class="entrada-luz"></div>
-
-
-        <!-- corazón -->
+    <div class="entrada-contenido">
 
         <div class="entrada-corazon">
             ♡
         </div>
 
-
-        <!-- pequeño texto -->
-
         <p class="entrada-mini">
-            UNA PEQUEÑA HISTORIA PARA TI
+            Hay historias que merecen una llave.
         </p>
-
-
-        <!-- título -->
 
         <h1>
             Para mi patita
         </h1>
 
-
-        <!-- mensaje -->
-
-        <p class="entrada-texto">
-
-            Hay una fecha que solamente
-            <br>
-
-            tú y yo conocemos.
-
-        </p>
-
-
         <p class="entrada-subtexto">
-
-            Si realmente recuerdas
-            <br>
-
-            el comienzo de nuestra historia...
-
+            Si esta historia también vive en tu corazón,
+            sabrás cómo entrar. ♡
         </p>
 
+        <div id="contenedorFecha" class="contenedor-fecha">
 
-        <!-- =================================================
-             CAMPO DE CLAVE
-             ================================================= -->
-
-        <div
-            class="entrada-fecha"
-            id="contenedorFecha"
-        >
-
-            <div class="candado">
+            <div id="candado" class="candado">
                 ♡
             </div>
 
-            <input
-                type="password"
-                id="fechaInput"
-                maxlength="8"
-                inputmode="numeric"
-                pattern="[0-9]*"
-                autocomplete="off"
-                aria-label="Nuestra fecha secreta"
-                placeholder="••••••••"
-            >
-
-        </div>
-
-
-        <!-- botón -->
-
-        <button
-            class="btn-entrada"
-            id="btnEntrada"
-            type="button"
-        >
-
-            Abrir nuestra historia
-
-            <span>
-                ♡
-            </span>
-
-        </button>
-
-
-        <!-- =================================================
-             MENSAJE DE ERROR
-             ================================================= -->
-
-        <div
-            class="error-fecha"
-            id="errorFecha"
-            aria-live="polite"
-        >
-
-            <span class="error-icon">
-                ✦
-            </span>
-
-            <p id="mensajeError">
-
-                Mmm... esa no es la llave
-                de nuestra historia. 💭
-
+            <p class="entrada-instruccion">
+                Escribe nuestra llave
             </p>
 
+            <input
+                id="fechaInput"
+                type="password"
+                inputmode="numeric"
+                autocomplete="off"
+                maxlength="8"
+                placeholder="••••••••"
+                aria-label="Llave secreta"
+            >
+
+            <button id="btnEntrada" class="btn-principal">
+                Abrir nuestra historia
+            </button>
+
+            <p id="errorFecha" class="error-fecha"></p>
+
+            <p id="mensajeError" class="mensaje-error"></p>
+
         </div>
-
-
-        <!-- pista -->
 
         <p class="entrada-pista">
-
-            Hay recuerdos que nunca deberían olvidarse.
-
+            Algunas historias no necesitan explicarse.
+            Solo recordarse. ✨
         </p>
 
+    </div>
 
-        <!-- corazones decorativos -->
+    <div class="entrada-corazones decoracion-corazon uno">♡</div>
+    <div class="entrada-corazones decoracion-corazon dos">♡</div>
+    <div class="entrada-corazones decoracion-corazon tres">♡</div>
 
-        <div class="entrada-decoracion decoracion-uno">
-            ♡
-        </div>
+</section>
 
-        <div class="entrada-decoracion decoracion-dos">
-            ✦
-        </div>
 
-        <div class="entrada-decoracion decoracion-tres">
-            ♡
+<!-- =========================================================
+     EXPERIENCIA PRINCIPAL
+========================================================= -->
+
+<main id="experiencia" class="experiencia">
+
+
+    <!-- =====================================================
+         ESCENA 1 — INICIO
+    ====================================================== -->
+
+    <section id="inicio" class="escena escena-inicio activa">
+
+        <div class="fondo-estrellas"></div>
+
+        <div class="aurora aurora-uno"></div>
+        <div class="aurora aurora-dos"></div>
+
+        <div class="inicio-contenido">
+
+            <p class="eyebrow">
+                PARA NOSOTROS
+            </p>
+
+            <h2>
+                Nuestra historia
+            </h2>
+
+            <p class="frase-inicio">
+                Todo comenzó con un momento...
+                <br>
+                y terminó convirtiéndose en mi universo favorito.
+            </p>
+
+            <div class="corazon-interactivo">
+
+                <button
+                    id="btnCorazon"
+                    class="btn-corazon"
+                    aria-label="Nuestro corazón"
+                >
+                    <canvas
+                        id="canvasCorazon"
+                        width="500"
+                        height="500">
+                    </canvas>
+
+                    <span class="corazon-centro">
+                        ♡
+                    </span>
+                </button>
+
+                <p id="mensajeCorazon" class="mensaje-corazon">
+                    Nuestro corazón guarda algo para ti...
+                </p>
+
+            </div>
+
+            <button
+                id="btnHistoria"
+                class="btn-principal btn-historia"
+            >
+                Comenzar nuestro viaje
+                <span>♡</span>
+            </button>
+
         </div>
 
     </section>
 
 
-
     <!-- =====================================================
-         EXPERIENCIA PRINCIPAL
-         ===================================================== -->
+         ESCENA 2 — ÁRBOL CRONOLÓGICO
+    ====================================================== -->
 
-    <main
-        class="inicio"
-        id="inicio"
-    >
+    <section id="escenaArbol" class="escena escena-arbol">
 
-        <div class="estrellas-fondo"></div>
+        <div class="universo-fondo"></div>
+
+        <div class="estrellas-arbol estrellas-arbol-1"></div>
+        <div class="estrellas-arbol estrellas-arbol-2"></div>
+        <div class="estrellas-arbol estrellas-arbol-3"></div>
+
+        <div class="halo-universo"></div>
+
+        <div class="luna-universo">
+            <span></span>
+        </div>
 
 
-        <!-- luna -->
+        <!-- ENCABEZADO -->
 
-        <div class="luna">
-            ☾
+        <div class="arbol-encabezado">
+
+            <p class="eyebrow">
+                CAPÍTULO TRAS CAPÍTULO
+            </p>
+
+            <h2>
+                El universo de nosotros
+            </h2>
+
+            <p>
+                Nuestra historia no ocurrió de golpe...
+                <br>
+                fue creciendo poquito a poquito.
+            </p>
+
         </div>
 
 
         <!-- =================================================
-             TÍTULO PRINCIPAL
-             ================================================= -->
+             ÁRBOL
+        ================================================== -->
 
-        <section class="hero-inicio">
-
-            <div class="titulo-inicio">
-
-                <span>
-                    PARA ALGUIEN MUY ESPECIAL
-                </span>
+        <div id="arbolMagico" class="arbol-magico">
 
 
-                <h2>
+            <!-- LUZ DE LA HISTORIA -->
 
-                    Tengo algo
-                    <br>
+            <div class="camino-historia">
 
-                    <em>
-                        para ti...
-                    </em>
-
-                </h2>
-
-
-                <div class="decoracion-titulo">
-
-                    <i></i>
-
-                    ♡
-
-                    <i></i>
-
-                </div>
-
-
-                <p>
-
-                    Hay algo que quiero
-                    <br>
-
-                    que descubras por ti misma.
-
-                </p>
+                <span class="camino-punto punto-1"></span>
+                <span class="camino-punto punto-2"></span>
+                <span class="camino-punto punto-3"></span>
+                <span class="camino-punto punto-4"></span>
+                <span class="camino-punto punto-5"></span>
+                <span class="camino-punto punto-6"></span>
+                <span class="camino-punto punto-7"></span>
+                <span class="camino-punto punto-8"></span>
 
             </div>
 
 
-            <!-- =================================================
-                 CORAZÓN
-                 ================================================= -->
+            <!-- RAÍCES -->
 
-            <div
-                class="zona-corazon"
-                id="zonaCorazon"
+            <div class="raices">
+
+                <span class="raiz raiz-1"></span>
+                <span class="raiz raiz-2"></span>
+                <span class="raiz raiz-3"></span>
+                <span class="raiz raiz-4"></span>
+                <span class="raiz raiz-5"></span>
+
+            </div>
+
+
+            <!-- TRONCO -->
+
+            <div class="tronco-principal">
+
+                <div class="tronco-luz"></div>
+
+                <span class="rama rama-1"></span>
+                <span class="rama rama-2"></span>
+                <span class="rama rama-3"></span>
+                <span class="rama rama-4"></span>
+                <span class="rama rama-5"></span>
+                <span class="rama rama-6"></span>
+                <span class="rama rama-7"></span>
+
+            </div>
+
+
+            <!-- COPA DEL ÁRBOL -->
+
+            <div class="copa copa-1"></div>
+            <div class="copa copa-2"></div>
+            <div class="copa copa-3"></div>
+            <div class="copa copa-4"></div>
+            <div class="copa copa-5"></div>
+            <div class="copa copa-6"></div>
+
+
+            <!-- =================================================
+                 RECUERDO 1 — 30 DE ABRIL
+            ================================================== -->
+
+            <button
+                id="btnAbril"
+                class="recuerdo-nodo nodo-abril"
+                aria-label="30 de abril"
             >
 
-                <canvas
-                    id="canvasCorazon"
-                ></canvas>
+                <span class="nodo-numero">
+                    01
+                </span>
 
+                <span class="nodo-anillo"></span>
 
-                <!-- anillos -->
+                <span class="nodo-luz"></span>
 
-                <div
-                    class="anillo-corazon anillo-uno"
-                ></div>
+                <span class="nodo-icono">
+                    🌱
+                </span>
 
-                <div
-                    class="anillo-corazon anillo-dos"
-                ></div>
+                <span class="nodo-texto">
+                    <strong>
+                        30 de abril
+                    </strong>
 
-                <div
-                    class="anillo-corazon anillo-tres"
-                ></div>
+                    <small>
+                        Donde todo comenzó
+                    </small>
+                </span>
 
-
-                <!-- botón -->
-
-                <button
-                    class="boton-corazon"
-                    id="botonCorazon"
-                    type="button"
-                    aria-label="Descubrir sorpresa"
-                >
-
-                    <span class="nucleo-corazon">
-                        ♡
-                    </span>
-
-                </button>
-
-            </div>
+            </button>
 
 
             <!-- =================================================
-                 INDICADOR
-                 ================================================= -->
+                 RECUERDO 2 — VIDEO
+            ================================================== -->
 
-            <div
-                class="indicador"
-                id="indicador"
+            <button
+                id="btnVideoRecuerdo"
+                class="recuerdo-nodo nodo-video"
+                aria-label="Nuestro primer recuerdo"
             >
 
-                <span>
-                    toca el corazón
+                <span class="nodo-numero">
+                    02
                 </span>
 
-                <b>
-                    ↓
-                </b>
+                <span class="nodo-anillo"></span>
 
-            </div>
+                <span class="nodo-luz"></span>
+
+                <span class="nodo-icono">
+                    🎥
+                </span>
+
+                <span class="nodo-texto">
+                    <strong>
+                        Nuestro primer recuerdo
+                    </strong>
+
+                    <small>
+                        Volvamos a ese momento
+                    </small>
+                </span>
+
+            </button>
 
 
             <!-- =================================================
-                 PATITOS
-                 ================================================= -->
+                 RECUERDO 3 — 30 DE MAYO
+            ================================================== -->
 
-            <div class="patitos">
+            <button
+                id="btnMayo"
+                class="recuerdo-nodo nodo-mayo"
+                aria-label="30 de mayo"
+            >
 
-                <div class="patito patito-uno">
-                    🦆
-                </div>
-
-                <span>
-                    para mi patita
-                    <b>♡</b>
+                <span class="nodo-numero">
+                    03
                 </span>
 
-                <div class="patito patito-dos">
-                    🦆
-                </div>
+                <span class="nodo-anillo"></span>
 
-            </div>
+                <span class="nodo-luz"></span>
 
+                <span class="nodo-icono">
+                    💜
+                </span>
 
-        </section>
+                <span class="nodo-texto">
+                    <strong>
+                        30 de mayo
+                    </strong>
 
+                    <small>
+                        El día que comenzó nuestro noviazgo
+                    </small>
+                </span>
 
-
-        <!-- =====================================================
-             SORPRESA DESPUÉS DEL CORAZÓN
-             ===================================================== -->
-
-        <section
-            class="sorpresa"
-            id="sorpresa"
-        >
-
-            <div class="sorpresa-brillo"></div>
+            </button>
 
 
-            <div class="sorpresa-contenido">
+            <!-- =================================================
+                 RECUERDO 4 — NOSOTROS
+            ================================================== -->
 
-                <div class="sorpresa-corazon">
-                    ♡
-                </div>
+            <button
+                id="btnNosotros"
+                class="recuerdo-nodo nodo-nosotros"
+                aria-label="Nosotros"
+            >
 
+                <span class="nodo-numero">
+                    04
+                </span>
 
-                <p class="sorpresa-mini">
-                    LO ENCONTRASTE
-                </p>
+                <span class="nodo-anillo"></span>
 
+                <span class="nodo-luz"></span>
 
-                <p class="sorpresa-texto">
+                <span class="nodo-icono">
+                    📸
+                </span>
 
-                    Y ahora que encontraste
-                    <br>
+                <span class="nodo-texto">
+                    <strong>
+                        Nosotros
+                    </strong>
 
-                    el corazón...
+                    <small>
+                        Tantos momentos, un solo nosotros
+                    </small>
+                </span>
 
-                </p>
-
-
-                <h2>
-
-                    quiero llevarte
-                    <br>
-
-                    al comienzo
-                    <br>
-
-                    de nuestra historia.
-
-                </h2>
-
-
-                <p class="sorpresa-secundaria">
-
-                    Porque antes de todo lo que somos hoy,
-                    <br>
-
-                    hubo un primer recuerdo.
-
-                </p>
+            </button>
 
 
-                <button
-                    class="btn-historia"
-                    id="btnHistoria"
-                    type="button"
-                >
+            <!-- =================================================
+                 RECUERDO 5 — ELLA
+            ================================================== -->
 
-                    <span>
-                        Descubrir nuestro recuerdo
-                    </span>
+            <button
+                id="btnElla"
+                class="recuerdo-nodo nodo-ella"
+                aria-label="Para ella"
+            >
 
-                    <b>
-                        →
-                    </b>
+                <span class="nodo-numero">
+                    05
+                </span>
 
-                </button>
+                <span class="nodo-anillo"></span>
 
-            </div>
+                <span class="nodo-luz"></span>
 
-        </section>
+                <span class="nodo-icono">
+                    💌
+                </span>
 
-    </main>
+                <span class="nodo-texto">
+                    <strong>
+                        Para ti
+                    </strong>
 
+                    <small>
+                        Porque eres mi persona favorita
+                    </small>
+                </span>
+
+            </button>
+
+
+            <!-- =================================================
+                 RECUERDO 6 — TIEMPO
+            ================================================== -->
+
+            <button
+                id="btnTiempo"
+                class="recuerdo-nodo nodo-tiempo"
+                aria-label="Nuestro tiempo"
+            >
+
+                <span class="nodo-numero">
+                    06
+                </span>
+
+                <span class="nodo-anillo"></span>
+
+                <span class="nodo-luz"></span>
+
+                <span class="nodo-icono">
+                    ⏳
+                </span>
+
+                <span class="nodo-texto">
+                    <strong>
+                        Nuestro tiempo
+                    </strong>
+
+                    <small>
+                        Cada segundo contigo
+                    </small>
+                </span>
+
+            </button>
+
+
+            <!-- =================================================
+                 RECUERDO 7 — CANCIÓN
+            ================================================== -->
+
+            <button
+                id="btnCancion"
+                class="recuerdo-nodo nodo-cancion"
+                aria-label="Nuestra canción"
+            >
+
+                <span class="nodo-numero">
+                    07
+                </span>
+
+                <span class="nodo-anillo"></span>
+
+                <span class="nodo-luz"></span>
+
+                <span class="nodo-icono">
+                    🎵
+                </span>
+
+                <span class="nodo-texto">
+                    <strong>
+                        Nuestra canción
+                    </strong>
+
+                    <small>
+                        Una melodía que suena a nosotros
+                    </small>
+                </span>
+
+            </button>
+
+
+            <!-- =================================================
+                 RECUERDO 8 — SUEÑOS
+            ================================================== -->
+
+            <button
+                id="btnSuenos"
+                class="recuerdo-nodo nodo-suenos"
+                aria-label="Nuestros sueños"
+            >
+
+                <span class="nodo-numero">
+                    08
+                </span>
+
+                <span class="nodo-anillo"></span>
+
+                <span class="nodo-luz"></span>
+
+                <span class="nodo-icono">
+                    ✨
+                </span>
+
+                <span class="nodo-texto">
+                    <strong>
+                        Nuestros sueños
+                    </strong>
+
+                    <small>
+                        Todo lo que todavía nos falta vivir
+                    </small>
+                </span>
+
+            </button>
+
+        </div>
+
+
+        <!-- FRASE -->
+
+        <div class="arbol-frase">
+
+            <span class="linea-frase"></span>
+
+            <p>
+                Nuestra historia comenzó con un momento...
+                <br>
+                y cada recuerdo nos llevó hasta aquí. ♡
+            </p>
+
+            <span class="linea-frase"></span>
+
+        </div>
+
+    </section>
 
 
     <!-- =====================================================
-         SECCIÓN 1
-         30 DE ABRIL
-         PRIMER VIAJE
-         ===================================================== -->
+         ESCENA 3 — 30 DE ABRIL
+    ====================================================== -->
 
-    <section
-        class="primer-viaje"
-        id="primerViaje"
-    >
+    <section id="primerViaje" class="escena escena-recuerdo">
 
-        <div class="viaje-fondo"></div>
+        <div class="recuerdo-fondo"></div>
 
+        <div class="recuerdo-contenido">
 
-        <div class="viaje-estrellas"></div>
-
-
-        <div class="viaje-contenido">
-
-
-            <!-- etiqueta -->
-
-            <div class="etiqueta">
-
-                NUESTRO PRIMER RECUERDO
-
-            </div>
-
-
-            <!-- fecha -->
-
-            <div class="fecha-viaje">
-
-                <strong>
-                    30
-                </strong>
-
-                <span>
-                    ABRIL
-                </span>
-
-            </div>
-
-
-            <!-- separador -->
-
-            <div class="separador-viaje">
-
-                <i></i>
-
-                ♡
-
-                <i></i>
-
-            </div>
-
-
-            <!-- título -->
+            <p class="eyebrow">
+                CAPÍTULO 01
+            </p>
 
             <h2>
-
-                El comienzo
-                <br>
-
-                de nuestra historia
-
+                30 de abril
             </h2>
 
-
-            <!-- texto -->
-
-            <p class="viaje-introduccion">
-
-                Quizás en ese momento no sabíamos
-                todo lo que vendría después...
-
+            <p class="recuerdo-titulo">
+                Donde todo comenzó
             </p>
 
+            <div class="recuerdo-imagen-contenedor">
 
-            <p class="viaje-introduccion">
-
-                Pero ese viaje terminó convirtiéndose
-                en uno de esos recuerdos que quiero
-                guardar para siempre.
-
-            </p>
-
-
-            <!-- =================================================
-                 FOTO DEL 30 DE ABRIL
-                 ================================================= -->
-
-            <div class="foto-recuerdo">
-
-                <div class="foto-marco">
-
-                    <div class="foto-esquina esquina-uno"></div>
-                    <div class="foto-esquina esquina-dos"></div>
+                <button
+                    id="btnFotoAbril"
+                    class="foto-recuerdo"
+                    aria-label="Ver nuestro recuerdo del 30 de abril"
+                >
 
                     <img
                         src="img/30_abril.jpg"
-                        alt="Nuestro primer viaje"
+                        alt="Nuestro recuerdo del 30 de abril"
                     >
 
-                    <div class="foto-brillo"></div>
+                    <span class="foto-brillo"></span>
 
-                </div>
-
-
-                <p>
-
-                    Un recuerdo que siempre
-                    voy a llevar conmigo. ♡
-
-                </p>
-
-            </div>
-
-
-            <!-- =================================================
-                 VIDEO
-                 ================================================= -->
-
-            <div class="video-seccion">
-
-                <p class="video-mini">
-
-                    GUARDEMOS ESTE MOMENTO
-
-                </p>
-
-
-                <h3>
-
-                    Nuestro primer viaje 🎥
-
-                </h3>
-
-
-                <p class="video-descripcion">
-
-                    Porque algunas historias
-                    merecen volver a vivirse.
-
-                </p>
-
-
-                <div class="video-marco">
-
-                    <div class="video-luz"></div>
-
-                    <video
-                        id="videoRecuerdo"
-                        controls
-                        playsinline
-                        preload="metadata"
-                    >
-
-                        <source
-                            src="img/primer_recuerdo.mp4"
-                            type="video/mp4"
-                        >
-
-                        Tu navegador no puede
-                        reproducir este video.
-
-                    </video>
-
-                </div>
-
-            </div>
-
-
-            <!-- =================================================
-                 FRASE
-                 ================================================= -->
-
-            <div class="frase-viaje">
-
-                <span>
-                    ✦
-                </span>
-
-
-                <p>
-
-                    Y sin saberlo,
-                    <br>
-
-                    estábamos empezando
-                    <br>
-
-                    algo muy bonito.
-
-                </p>
-
-
-                <span>
-                    ✦
-                </span>
-
-            </div>
-
-
-            <!-- botón -->
-
-            <button
-                class="btn-siguiente"
-                id="btnSiguiente"
-                type="button"
-            >
-
-                <span>
-                    Y después...
-                </span>
-
-                <b>
-                    ↓
-                </b>
-
-            </button>
-
-        </div>
-
-    </section>
-
-
-
-    <!-- =====================================================
-         SECCIÓN 2
-         30 DE MAYO
-         ===================================================== -->
-
-    <section
-        class="seccion-30-mayo"
-        id="seccion30Mayo"
-    >
-
-        <div class="mayo-fondo"></div>
-
-
-        <div class="mayo-contenido">
-
-            <p class="mayo-mini">
-                Y ENTONCES LLEGÓ ESE DÍA
-            </p>
-
-
-            <div class="mayo-fecha">
-
-                <strong>
-                    30
-                </strong>
-
-                <span>
-                    MAYO
-                </span>
-
-            </div>
-
-
-            <div class="mayo-corazon">
-                ♡
-            </div>
-
-
-            <h2>
-
-                El día en que
-                <br>
-
-                nuestra historia
-                <br>
-
-                cambió.
-
-            </h2>
-
-
-            <p class="mayo-texto">
-
-                Hay fechas que simplemente aparecen
-                en el calendario.
-
-                <br><br>
-
-                Y hay otras que se quedan
-                para siempre en el corazón.
-
-            </p>
-
-
-            <!-- FOTO 30 MAYO -->
-
-            <div class="mayo-foto">
-
-                <img
-                    src="img/30_mayo.jpg"
-                    alt="Nuestro 30 de mayo"
-                >
-
-            </div>
-
-
-            <p class="mayo-final">
-
-                Ese día comenzó oficialmente
-                algo que hoy significa muchísimo para mí.
-
-            </p>
-
-
-            <button
-                class="btn-memorias"
-                id="btnMemorias"
-                type="button"
-            >
-
-                Continuar nuestra historia
-                <span>↓</span>
-
-            </button>
-
-        </div>
-
-    </section>
-
-
-
-    <!-- =====================================================
-         SECCIÓN 3
-         NUESTROS RECUERDOS
-         ===================================================== -->
-
-    <section
-        class="seccion-recuerdos"
-        id="seccionRecuerdos"
-    >
-
-        <div class="recuerdos-fondo"></div>
-
-
-        <div class="recuerdos-contenido">
-
-            <p class="recuerdos-mini">
-                PEQUEÑOS MOMENTOS
-            </p>
-
-
-            <h2>
-
-                Nosotros
-
-                <br>
-
-                <em>
-                    en recuerdos.
-                </em>
-
-            </h2>
-
-
-            <div class="recuerdos-decoracion">
-                ♡
-            </div>
-
-
-            <!-- imagen -->
-
-            <div class="recuerdo-principal">
-
-                <img
-                    src="img/nosotros_01.jpg"
-                    alt="Un recuerdo de nosotros"
-                >
-
-            </div>
-
-
-            <p class="recuerdos-texto">
-
-                Quizás para alguien más sean
-                solamente fotografías.
-
-                <br><br>
-
-                Para mí son pequeños pedacitos
-                de una historia que no quiero olvidar.
-
-            </p>
-
-
-            <!-- tarjetas -->
-
-            <div class="recuerdos-tarjetas">
-
-                <article class="tarjeta-recuerdo">
-
-                    <span>
+                    <span class="foto-corazon">
                         ♡
                     </span>
 
-                    <h3>
-                        Cada momento
-                    </h3>
-
-                    <p>
-                        Tiene algo que lo hace especial.
-                    </p>
-
-                </article>
-
-
-                <article class="tarjeta-recuerdo">
-
-                    <span>
-                        ✦
-                    </span>
-
-                    <h3>
-                        Cada recuerdo
-                    </h3>
-
-                    <p>
-                        Tiene una parte de nosotros.
-                    </p>
-
-                </article>
-
-
-                <article class="tarjeta-recuerdo">
-
-                    <span>
-                        ∞
-                    </span>
-
-                    <h3>
-                        Y cada día
-                    </h3>
-
-                    <p>
-                        Hace que nuestra historia continúe.
-                    </p>
-
-                </article>
+                </button>
 
             </div>
 
+            <p class="recuerdo-descripcion">
+                Hay días que parecen normales...
+                hasta que el tiempo demuestra que
+                eran el comienzo de algo enorme.
+            </p>
+
+            <div class="botones-recuerdo">
+
+                <button
+                    id="btnVideoAbril"
+                    class="btn-principal"
+                >
+                    Volver a ese momento 🎥
+                </button>
+
+                <button
+                    id="btnSiguiente"
+                    class="btn-secundario"
+                >
+                    Y después llegó el amor...
+                    <span>→</span>
+                </button>
+
+            </div>
 
             <button
-                class="btn-ella"
-                id="btnElla"
-                type="button"
+                id="btnVolverArbolAbril"
+                class="btn-volver"
             >
-
-                Hay algo que quiero decirte
-                <span>→</span>
-
+                ← Volver a nuestra historia
             </button>
 
         </div>
@@ -894,116 +653,248 @@
     </section>
 
 
+    <!-- =====================================================
+         ESCENA 4 — 30 DE MAYO
+    ====================================================== -->
+
+    <section id="seccion30Mayo" class="escena escena-recuerdo escena-mayo">
+
+        <div class="recuerdo-fondo"></div>
+
+        <div class="recuerdo-contenido">
+
+            <p class="eyebrow">
+                CAPÍTULO 03
+            </p>
+
+            <h2>
+                30 de mayo
+            </h2>
+
+            <p class="recuerdo-titulo">
+                El día que elegimos caminar juntos
+            </p>
+
+            <div class="recuerdo-imagen-contenedor">
+
+                <button
+                    id="btnFotoMayo"
+                    class="foto-recuerdo"
+                    aria-label="Ver nuestro recuerdo del 30 de mayo"
+                >
+
+                    <img
+                        src="img/30_mayo.jpg"
+                        alt="Nuestro recuerdo del 30 de mayo"
+                    >
+
+                    <span class="foto-brillo"></span>
+
+                    <span class="foto-corazon">
+                        ♡
+                    </span>
+
+                </button>
+
+            </div>
+
+            <p class="recuerdo-descripcion">
+                Y lo que comenzó como un momento,
+                empezó a convertirse en nuestra historia.
+                Desde ese día, mi mundo tiene otro significado.
+            </p>
+
+            <div class="botones-recuerdo">
+
+                <button
+                    id="btnMemorias"
+                    class="btn-principal"
+                >
+                    Seguir nuestra historia
+                    <span>♡</span>
+                </button>
+
+            </div>
+
+            <button
+                id="btnVolverArbolMayo"
+                class="btn-volver"
+            >
+                ← Volver a nuestra historia
+            </button>
+
+        </div>
+
+    </section>
+
 
     <!-- =====================================================
-         SECCIÓN 4
-         PARA ELLA
-         ===================================================== -->
+         ESCENA 5 — NOSOTROS
+    ====================================================== -->
 
     <section
-        class="seccion-ella"
+        id="seccionRecuerdos"
+        class="escena escena-recuerdo escena-nosotros"
+    >
+
+        <div class="recuerdo-fondo"></div>
+
+        <div class="recuerdo-contenido">
+
+            <p class="eyebrow">
+                CAPÍTULO 04
+            </p>
+
+            <h2>
+                Nosotros
+            </h2>
+
+            <p class="recuerdo-titulo">
+                Un montón de momentos que guardo en el corazón
+            </p>
+
+            <div class="recuerdo-imagen-contenedor">
+
+                <button
+                    id="btnFotoNosotros"
+                    class="foto-recuerdo"
+                    aria-label="Ver nuestro recuerdo"
+                >
+
+                    <img
+                        src="img/nosotros_01.jpg"
+                        alt="Un recuerdo de nosotros"
+                    >
+
+                    <span class="foto-brillo"></span>
+
+                    <span class="foto-corazon">
+                        ♡
+                    </span>
+
+                </button>
+
+            </div>
+
+            <p class="recuerdo-descripcion">
+                Si pudiera guardar todos nuestros momentos
+                en un solo lugar, elegiría este:
+                nosotros, siendo nosotros.
+            </p>
+
+            <div class="botones-recuerdo">
+
+                <button
+                    id="btnEllaDesdeNosotros"
+                    class="btn-principal"
+                >
+                    Hay algo que quiero decirte...
+                    <span>♡</span>
+                </button>
+
+            </div>
+
+            <button
+                id="btnVolverArbolNosotros"
+                class="btn-volver"
+            >
+                ← Volver a nuestra historia
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         ESCENA 6 — PARA ELLA
+    ====================================================== -->
+
+    <section
         id="seccionElla"
+        class="escena escena-ella"
     >
 
         <div class="ella-fondo"></div>
 
-
         <div class="ella-contenido">
 
-            <div class="ella-foto">
-
-                <img
-                    src="img/ella_01.jpg"
-                    alt="Para mi patita"
-                >
-
-            </div>
-
-
-            <p class="ella-mini">
-                PARA TI
+            <p class="eyebrow">
+                CAPÍTULO 05
             </p>
 
-
             <h2>
-
-                Si pudiera
-                <br>
-
-                explicarte lo que siento...
-
+                Para mi patita
             </h2>
 
+            <div class="ella-layout">
 
-            <div class="ella-linea">
-                ♡
-            </div>
+                <button
+                    id="btnFotoElla"
+                    class="ella-foto"
+                    aria-label="Ver recuerdo de ella"
+                >
 
+                    <img
+                        src="img/ella_01.jpg"
+                        alt="Para mi patita"
+                    >
 
-            <div class="carta">
+                    <span class="ella-brillo"></span>
 
-                <p>
+                </button>
 
-                    Probablemente necesitaría
-                    muchas más palabras de las que
-                    caben en una página.
+                <div class="carta">
 
-                </p>
+                    <span class="carta-comilla">
+                        “
+                    </span>
 
+                    <p>
+                        Te amo por cada pequeño detalle
+                        que hace que seas tú.
+                    </p>
 
-                <p>
+                    <p>
+                        Te amo por cada risa,
+                        cada mirada,
+                        cada momento y cada recuerdo
+                        que hemos construido.
+                    </p>
 
-                    Porque llegaste a mi vida y
-                    poco a poco fuiste convirtiendo
-                    momentos normales en recuerdos
-                    que quiero guardar.
+                    <p>
+                        Te amo por lo que somos,
+                        por lo que hemos vivido
+                        y por todo lo que todavía
+                        nos queda por vivir.
+                    </p>
 
-                </p>
+                    <p class="carta-final">
+                        Te amo millones de universos,
+                        mi patita. ♡
+                    </p>
 
+                    <span class="firma">
+                        Con todo mi amor
+                    </span>
 
-                <p>
-
-                    Gracias por cada risa,
-                    cada conversación,
-                    cada momento y cada recuerdo
-                    que hemos construido.
-
-                </p>
-
-
-                <p>
-
-                    Y sobre todo...
-
-                </p>
-
-
-                <p class="carta-destacada">
-
-                    gracias por ser tú.
-
-                </p>
-
-
-                <p class="carta-final">
-
-                    Te quiero muchísimo,
-                    mi patita. 💜
-
-                </p>
+                </div>
 
             </div>
-
 
             <button
-                class="btn-final"
                 id="btnFinal"
-                type="button"
+                class="btn-principal"
             >
+                Hay algo más que quiero mostrarte...
+                <span>♡</span>
+            </button>
 
-                Hay una última cosa...
-                <span>↓</span>
-
+            <button
+                id="btnVolverArbolElla"
+                class="btn-volver"
+            >
+                ← Volver a nuestra historia
             </button>
 
         </div>
@@ -1011,323 +902,644 @@
     </section>
 
 
-
     <!-- =====================================================
-         SECCIÓN 5
-         CONTADOR
-         ===================================================== -->
+         ESCENA 7 — CONTADOR
+    ====================================================== -->
 
     <section
-        class="seccion-contador"
         id="seccionContador"
+        class="escena escena-contador"
     >
 
         <div class="contador-fondo"></div>
 
-
         <div class="contador-contenido">
 
-            <p class="contador-mini">
-                DESDE AQUEL DÍA
+            <p class="eyebrow">
+                CAPÍTULO 06
             </p>
 
-
             <h2>
-
-                El tiempo pasa...
-
-                <br>
-
-                pero nosotros seguimos
-                <em>
-                    escribiendo la historia.
-                </em>
-
+                Nuestro tiempo
             </h2>
 
+            <p class="contador-frase">
+                Y mientras el reloj sigue avanzando...
+                <br>
+                yo sigo eligiéndote.
+            </p>
 
-            <div
-                class="contador"
-                id="contador"
-            >
+            <div class="contador">
 
                 <div class="contador-item">
 
-                    <strong id="dias">
+                    <span id="dias">
                         0
-                    </strong>
+                    </span>
 
-                    <span>
+                    <small>
                         días
-                    </span>
+                    </small>
 
                 </div>
 
+                <div class="contador-separador">
+                    :
+                </div>
 
                 <div class="contador-item">
 
-                    <strong id="horas">
-                        0
-                    </strong>
+                    <span id="horas">
+                        00
+                    </span>
 
-                    <span>
+                    <small>
                         horas
-                    </span>
+                    </small>
 
                 </div>
 
+                <div class="contador-separador">
+                    :
+                </div>
 
                 <div class="contador-item">
 
-                    <strong id="minutos">
-                        0
-                    </strong>
+                    <span id="minutos">
+                        00
+                    </span>
 
-                    <span>
+                    <small>
                         minutos
-                    </span>
+                    </small>
 
                 </div>
 
+                <div class="contador-separador">
+                    :
+                </div>
 
                 <div class="contador-item">
 
-                    <strong id="segundos">
-                        0
-                    </strong>
-
-                    <span>
-                        segundos
+                    <span id="segundos">
+                        00
                     </span>
+
+                    <small>
+                        segundos
+                    </small>
 
                 </div>
 
             </div>
 
-
-            <p class="contador-frase">
-
-                Y espero que podamos seguir
-                sumando muchos más.
-
+            <p class="contador-amor">
+                Cada segundo contigo
+                es un segundo que agradezco.
             </p>
+
+            <button
+                id="btnCancionDesdeContador"
+                class="btn-principal"
+            >
+                Nuestra canción
+                <span>♪</span>
+            </button>
+
+            <button
+                id="btnVolverArbolTiempo"
+                class="btn-volver"
+            >
+                ← Volver a nuestra historia
+            </button>
 
         </div>
 
     </section>
 
 
-
     <!-- =====================================================
-         SECCIÓN 6
-         NUESTRA CANCIÓN
-         ===================================================== -->
+         ESCENA 8 — CANCIÓN
+    ====================================================== -->
 
     <section
-        class="seccion-cancion"
         id="seccionCancion"
+        class="escena escena-cancion"
     >
+
+        <div class="cancion-fondo"></div>
 
         <div class="cancion-contenido">
 
-            <div class="vinilo">
+            <p class="eyebrow">
+                CAPÍTULO 07
+            </p>
 
-                <div class="vinilo-centro">
-                    ♡
+            <h2>
+                Nuestra canción
+            </h2>
+
+            <p class="cancion-frase">
+                Hay canciones que se escuchan...
+                <br>
+                y hay canciones que se sienten.
+            </p>
+
+
+            <!-- VINILO -->
+
+            <div class="vinilo-contenedor">
+
+                <div
+                    id="vinilo"
+                    class="vinilo"
+                >
+
+                    <div class="vinilo-brillo"></div>
+
+                    <div class="vinilo-centro">
+                        ♡
+                    </div>
+
                 </div>
 
             </div>
 
 
-            <p class="cancion-mini">
-                SI NUESTRA HISTORIA TUVIERA UNA CANCIÓN...
+            <!-- AUDIO -->
+
+            <audio
+                id="audioCancion"
+                preload="metadata"
+            >
+
+                <source
+                    src="img/nuestra-cancion.mp3"
+                    type="audio/mpeg"
+                >
+
+                Tu navegador no puede reproducir esta canción.
+
+            </audio>
+
+
+            <!-- REPRODUCTOR -->
+
+            <div class="reproductor">
+
+                <button
+                    id="btnPlayCancion"
+                    class="btn-play"
+                    aria-label="Reproducir canción"
+                >
+                    ▶
+                </button>
+
+                <div class="progreso-contenedor">
+
+                    <span id="tiempoActual">
+                        0:00
+                    </span>
+
+                    <input
+                        id="barraProgreso"
+                        type="range"
+                        min="0"
+                        max="100"
+                        value="0"
+                    >
+
+                    <span id="tiempoTotal">
+                        0:00
+                    </span>
+
+                </div>
+
+                <button
+                    id="btnVolumen"
+                    class="btn-volumen"
+                    aria-label="Volumen"
+                >
+                    🔊
+                </button>
+
+                <input
+                    id="barraVolumen"
+                    type="range"
+                    min="0"
+                    max="1"
+                    step="0.01"
+                    value="0.8"
+                    aria-label="Volumen"
+                >
+
+            </div>
+
+
+            <p class="cancion-amor">
+                Que esta canción siempre nos recuerde
+                a nosotros. ♡
             </p>
 
 
-            <h2>
+            <button
+                id="btnSuenosDesdeCancion"
+                class="btn-principal"
+            >
+                Y todavía nos falta mucho por vivir...
+                <span>✨</span>
+            </button>
 
-                Sonaría a nosotros.
-
-            </h2>
-
-
-            <p>
-
-                Este espacio queda reservado
-                para nuestra canción.
-
-            </p>
+            <button
+                id="btnVolverArbolCancion"
+                class="btn-volver"
+            >
+                ← Volver a nuestra historia
+            </button>
 
         </div>
 
     </section>
 
 
-
     <!-- =====================================================
-         SECCIÓN 7
-         NUESTROS SUEÑOS
-         ===================================================== -->
+         ESCENA 9 — SUEÑOS
+    ====================================================== -->
 
     <section
-        class="seccion-suenos"
         id="seccionSuenos"
+        class="escena escena-suenos"
     >
+
+        <div class="suenos-fondo"></div>
 
         <div class="suenos-contenido">
 
-            <p class="suenos-mini">
-                LO QUE TODAVÍA NOS FALTA VIVIR
+            <p class="eyebrow">
+                CAPÍTULO 08
+            </p>
+
+            <h2>
+                Nuestros sueños
+            </h2>
+
+            <p class="suenos-frase">
+                Lo más bonito de nuestra historia
+                es que todavía estamos escribiendo los capítulos.
             </p>
 
 
-            <h2>
+            <div class="suenos-grid">
 
-                Nuestra historia
-                <br>
+                <div class="sueno-card">
 
-                todavía tiene
-                <em>
-                    muchos capítulos.
-                </em>
+                    <span>
+                        ✨
+                    </span>
 
-            </h2>
+                    <h3>
+                        Seguir creciendo
+                    </h3>
 
+                    <p>
+                        Juntos, paso a paso.
+                    </p>
 
-            <div class="suenos-lista">
-
-                <div class="sueno">
-                    <span>✦</span>
-                    <p>Más viajes</p>
                 </div>
 
 
-                <div class="sueno">
-                    <span>♡</span>
-                    <p>Más recuerdos</p>
+                <div class="sueno-card">
+
+                    <span>
+                        🌙
+                    </span>
+
+                    <h3>
+                        Vivir aventuras
+                    </h3>
+
+                    <p>
+                        Crear recuerdos que duren para siempre.
+                    </p>
+
                 </div>
 
 
-                <div class="sueno">
-                    <span>∞</span>
-                    <p>Más momentos juntos</p>
+                <div class="sueno-card">
+
+                    <span>
+                        🏡
+                    </span>
+
+                    <h3>
+                        Construir
+                    </h3>
+
+                    <p>
+                        Un futuro lleno de nosotros.
+                    </p>
+
                 </div>
 
 
-                <div class="sueno">
-                    <span>☾</span>
-                    <p>Muchos sueños por cumplir</p>
+                <div class="sueno-card">
+
+                    <span>
+                        ♡
+                    </span>
+
+                    <h3>
+                        Elegirnos
+                    </h3>
+
+                    <p>
+                        Una y otra vez.
+                    </p>
+
                 </div>
 
             </div>
 
 
-            <p class="suenos-final">
+            <button
+                id="btnFinalDesdeSuenos"
+                class="btn-principal"
+            >
+                Llegamos al final...
+                <span>♡</span>
+            </button>
 
-                Y quiero estar ahí
-                para vivirlos contigo.
-
-            </p>
+            <button
+                id="btnVolverArbolSuenos"
+                class="btn-volver"
+            >
+                ← Volver a nuestra historia
+            </button>
 
         </div>
 
     </section>
 
 
-
     <!-- =====================================================
-         FINAL
-         ===================================================== -->
+         ESCENA FINAL
+    ====================================================== -->
 
     <section
-        class="seccion-final"
         id="seccionFinal"
+        class="escena escena-final"
     >
 
         <div class="final-estrellas"></div>
 
+        <div class="final-corazones">
+            ♡
+        </div>
 
         <div class="final-contenido">
 
-            <div class="final-corazon">
+            <p class="eyebrow">
+                Y ESTO APENAS COMIENZA
+            </p>
+
+            <h2>
+                Te amo
+            </h2>
+
+            <p class="final-frase">
+                Te amo millones de universos.
+            </p>
+
+            <p class="final-texto">
+                Gracias por ser parte de mi historia,
+                por cada sonrisa, cada momento,
+                cada abrazo y cada recuerdo.
+            </p>
+
+            <p class="final-texto">
+                Si pudiera volver al principio,
+                volvería a elegir cada momento
+                que me llevó hasta ti.
+            </p>
+
+            <div class="final-grande">
                 ♡
             </div>
 
-
-            <p class="final-mini">
-                Y SI LLEGASTE HASTA AQUÍ...
-            </p>
-
-
-            <h2>
-
-                Quiero que sepas
+            <p class="final-firma">
+                Para mi patita,
                 <br>
-
-                algo.
-
-            </h2>
-
-
-            <p class="final-mensaje">
-
-                De todas las cosas bonitas
-                que han pasado en mi vida...
-
-                <br><br>
-
-                conocerte es una de las que
-                más agradezco.
-
+                con todo mi amor.
             </p>
 
-
-            <div class="final-frase">
-
-                <span>
-                    ♡
-                </span>
-
-                <p>
-                    Te elegiría una y otra vez.
-                </p>
-
-                <span>
-                    ♡
-                </span>
-
-            </div>
-
-
-            <p class="final-patitos">
-                🦆 &nbsp; para siempre, mi patita &nbsp; 🦆
-            </p>
-
-
-            <div class="final-firma">
-
-                Con todo mi amor,
-
-                <br>
-
-                <strong>
-                    para ti. 💜
-                </strong>
-
-            </div>
+            <button
+                id="btnVolverHistoria"
+                class="btn-principal"
+            >
+                Volver a nuestra historia
+                <span>↺</span>
+            </button>
 
         </div>
 
     </section>
 
 
+</main>
 
-    <!-- =====================================================
-         JAVASCRIPT
-         ===================================================== -->
 
-    <script src="js/main.js"></script>
+<!-- =========================================================
+     VISOR FOTO — 30 DE ABRIL
+========================================================= -->
+
+<div
+    id="visorFoto"
+    class="visor-media"
+    aria-hidden="true"
+>
+
+    <button
+        class="cerrar-visor"
+        data-cerrar
+        aria-label="Cerrar"
+    >
+        ×
+    </button>
+
+    <div class="visor-contenido">
+
+        <img
+            src="img/30_abril.jpg"
+            alt="Nuestro recuerdo del 30 de abril"
+        >
+
+        <p>
+            El comienzo de algo que todavía no sabíamos
+            cuánto iba a significar. ♡
+        </p>
+
+    </div>
+
+</div>
+
+
+<!-- =========================================================
+     VISOR VIDEO — PRIMER RECUERDO
+========================================================= -->
+
+<div
+    id="visorVideo"
+    class="visor-media visor-video"
+    aria-hidden="true"
+>
+
+    <button
+        class="cerrar-visor"
+        data-cerrar
+        aria-label="Cerrar"
+    >
+        ×
+    </button>
+
+    <div class="visor-contenido">
+
+        <video
+            id="videoRecuerdo"
+            controls
+            playsinline
+            preload="metadata"
+        >
+
+            <source
+                src="img/primer_recuerdo.mp4"
+                type="video/mp4"
+            >
+
+            Tu navegador no puede reproducir este video.
+
+        </video>
+
+        <p>
+            Nuestro primer recuerdo...
+            ese pedacito de tiempo que siempre
+            voy a guardar. ♡
+        </p>
+
+    </div>
+
+</div>
+
+
+<!-- =========================================================
+     VISOR FOTO — 30 DE MAYO
+========================================================= -->
+
+<div
+    id="visorFotoMayo"
+    class="visor-media"
+    aria-hidden="true"
+>
+
+    <button
+        class="cerrar-visor"
+        data-cerrar
+        aria-label="Cerrar"
+    >
+        ×
+    </button>
+
+    <div class="visor-contenido">
+
+        <img
+            src="img/30_mayo.jpg"
+            alt="Nuestro recuerdo del 30 de mayo"
+        >
+
+        <p>
+            El día en que comenzó oficialmente
+            nuestra historia de amor. 💜
+        </p>
+
+    </div>
+
+</div>
+
+
+<!-- =========================================================
+     VISOR FOTO — NOSOTROS
+========================================================= -->
+
+<div
+    id="visorFotoNosotros"
+    class="visor-media"
+    aria-hidden="true"
+>
+
+    <button
+        class="cerrar-visor"
+        data-cerrar
+        aria-label="Cerrar"
+    >
+        ×
+    </button>
+
+    <div class="visor-contenido">
+
+        <img
+            src="img/nosotros_01.jpg"
+            alt="Un recuerdo de nosotros"
+        >
+
+        <p>
+            Nosotros.
+            Mi lugar favorito. ♡
+        </p>
+
+    </div>
+
+</div>
+
+
+<!-- =========================================================
+     VISOR FOTO — ELLA
+========================================================= -->
+
+<div
+    id="visorFotoElla"
+    class="visor-media"
+    aria-hidden="true"
+>
+
+    <button
+        class="cerrar-visor"
+        data-cerrar
+        aria-label="Cerrar"
+    >
+        ×
+    </button>
+
+    <div class="visor-contenido">
+
+        <img
+            src="img/ella_01.jpg"
+            alt="Para mi patita"
+        >
+
+        <p>
+            Para la persona que hace
+            más bonito mi universo. ♡
+        </p>
+
+    </div>
+
+</div>
+
+
+<!-- =========================================================
+     JAVASCRIPT
+========================================================= -->
+
+<script src="js/main.js"></script>
 
 </body>
-
 </html>
